@@ -8,6 +8,8 @@ It scans your local songs, reads your editable daily routine, builds a radio sch
 
 The project was inspired by the idea of a private AI radio host like Claudio, but Codio is built as an open-source, local-first version: your library, your routine, your taste, your terminal.
 
+![Codio Billie recommendation card](docs/screenshots/billie-recommend-card.png)
+
 ## Why Codio Exists
 
 Most music apps ask you what you want to play.
