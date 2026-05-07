@@ -1,26 +1,87 @@
 # Codio Local AI Radio
 
-Codio is a local-first private AI radio experiment. It reads your local music library and your daily routine, then plans a personal radio schedule for the day.
+> A local-first private AI radio that reads your day, understands your music library, and lets an AI host plan what you should hear next.
 
-It is inspired by the idea of a private AI radio host like Claudio, but this project is built as an open-source local terminal-style radio: local library first, editable routine file, AI host copy, optional TTS voice, and a visual radio terminal UI.
+Codio is not just a music player. It is a small personal radio station that runs on your own machine.
 
-## What It Does
+It scans your local songs, reads your editable daily routine, builds a radio schedule for morning, work, noon, afternoon, evening, and bedtime, then lets an AI host explain why each song belongs in that moment.
 
-- Plays local audio files from your library.
-- Scans and normalizes song title / artist metadata.
-- Reads your editable routine from `user/routines.json`.
-- Generates a daily radio plan for morning, work, noon, afternoon, evening, and bedtime.
-- Lets Codio explain why a song fits the current time slot.
-- Supports text chat with Codio.
-- Supports optional host voice generation through MiniMax TTS.
-- Includes a planner showcase page for demos and videos.
+The project was inspired by the idea of a private AI radio host like Claudio, but Codio is built as an open-source, local-first version: your library, your routine, your taste, your terminal.
+
+## Why Codio Exists
+
+Most music apps ask you what you want to play.
+
+Codio asks a different question:
+
+```text
+What kind of day are you having, and what should the radio do for that moment?
+```
+
+If you are waking up, Codio keeps the signal warm and light.
+
+If you are writing code with Codex, it moves toward focus, fewer vocals, and stable rhythm.
+
+If it is late, it lowers the energy and gives the room a softer ending.
+
+That is the core idea: a private AI radio that treats music as part of your day, not just a queue of files.
+
+## Highlights
+
+- Local-first music library scanning
+- Daily routine planning from `user/routines.json`
+- AI-generated radio schedule by time of day
+- Host intro copy before songs
+- Optional MiniMax TTS host voice
+- Text chat with Codio
+- Song title / artist cleanup tools
+- Planner showcase page for demos and videos
+- Terminal-style visual radio interface
+- Works without API keys through local fallbacks
+
+## Core Experience
+
+Codio combines three layers:
+
+```text
+Your Routine       user/routines.json
+Your Library       local playable audio files
+Codio Brain        planner + host copy + optional TTS
+```
+
+Then it produces:
+
+```text
+Morning       warm, light, wake-up radio
+Work          focused, stable, fewer vocals
+Noon          relaxed reset
+Afternoon     forward motion
+Evening       warm companion energy
+Bedtime       quiet, low-energy close
+```
+
+## Demo Pages
+
+```text
+/                    Main Codio radio terminal
+/plan-showcase        Daily radio plan showcase
+/recommend-card       End-card recommendation demo
+/visual-lab           Visual experiment page
+/voice-lab            Voice preview lab
+```
+
+The most useful pages for a quick look are:
+
+- `http://localhost:3000`
+- `http://localhost:3000/plan-showcase`
+- `http://localhost:3000/recommend-card`
 
 ## Project Structure
 
 ```text
 apps/web                 Next.js frontend
 apps/api                 Fastify backend
-user/routines.json       Your editable daily routine
+user/routines.json       Editable daily routine
 audio/                   Local audio folder, not committed
 audio/generated/         Generated TTS cache, not committed
 data/                    Local SQLite state, not committed
@@ -56,27 +117,17 @@ Open:
 
 ```text
 http://localhost:3000
-http://localhost:3000/plan-showcase
 ```
 
-## Windows Clean Web Restart
+## Configure Your Day
 
-If the Next.js dev server reports a missing `.next` chunk such as `Cannot find module './383.js'`, run:
-
-```powershell
-cd D:\Projects\local-ai-radio
-powershell -ExecutionPolicy Bypass -File D:\Projects\local-ai-radio\scripts\dev-web-clean.ps1
-```
-
-## Daily Routine
-
-Codio reads your schedule from:
+Codio reads your daily routine from:
 
 ```text
 user/routines.json
 ```
 
-Each block describes one part of the day:
+Example:
 
 ```json
 {
@@ -92,32 +143,32 @@ Each block describes one part of the day:
 }
 ```
 
-After editing `user/routines.json`, restart the API server or regenerate the planner so Codio reads the latest routine.
+After editing this file, restart the API server or regenerate the planner.
 
-## Music Library
+## Add Music
 
-Supported playable formats include:
+Put playable audio files in your local audio library. Supported formats include:
 
 ```text
 .mp3 .flac .m4a .wav .ogg
 ```
 
-NetEase `.ncm` files are not directly playable here. Convert or provide playable local files before importing.
+NetEase `.ncm` files are not directly playable. Convert or provide playable files first.
 
-The library parser tries to understand common filename patterns like:
+Codio tries to parse common filename patterns:
 
 ```text
 Artist - Song
 Song - Artist
 ```
 
-You can correct title / artist identity in the library UI when a file is parsed incorrectly.
+If a file is parsed incorrectly, you can fix title and artist identity from the library UI.
 
 ## Optional AI Features
 
-Codio works without API keys by falling back to local templates.
+Codio can run without API keys by using local templates.
 
-For AI chat and host intro copy, fill in:
+For AI chat and host intro copy:
 
 ```text
 RADIO_LLM_PROVIDER=deepseek
@@ -125,7 +176,7 @@ DEEPSEEK_API_KEY=
 DEEPSEEK_MODEL=deepseek-chat
 ```
 
-For host voice generation, fill in:
+For host voice generation:
 
 ```text
 RADIO_TTS_PROVIDER=minimax
@@ -136,25 +187,29 @@ MINIMAX_VOICE_ID=Chinese (Mandarin)_Warm-HeartedAunt
 
 Generated voice files are cached in `audio/generated/` and should not be committed.
 
-## Demo Pages
+## Windows Clean Web Restart
 
-- `/` main Codio radio terminal
-- `/plan-showcase` daily plan showcase for recording videos
-- `/visual-lab` visual experiment page
-- `/voice-lab` voice preview lab
+If the Next.js dev server reports a missing `.next` chunk such as `Cannot find module './383.js'`, run:
 
-## Open Source Safety
+```powershell
+cd D:\Projects\local-ai-radio
+powershell -ExecutionPolicy Bypass -File D:\Projects\local-ai-radio\scripts\dev-web-clean.ps1
+```
+
+## Privacy And Open Source Safety
+
+Codio is designed to keep personal assets local.
 
 Do not commit:
 
-- `.env` or any API keys
+- `.env` or API keys
 - local songs
 - `audio/generated/`
 - `data/*.sqlite`
 - logs
 - `.next` / build caches
 
-The repository includes `.env.example` as a safe template.
+This repository includes `.env.example` as a safe template.
 
 ## Scripts
 
@@ -164,6 +219,10 @@ npm run dev:web
 npm run build
 ```
 
+## Status
+
+Codio is an active prototype. The current version is good for local demos, experiments, and showing how a private AI radio can be assembled from a local library, a daily routine, an LLM, and optional TTS.
+
 ## License
 
-Add your license before publishing publicly. MIT is a common default for this kind of project.
+MIT
