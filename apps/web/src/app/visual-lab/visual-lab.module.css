@@ -1,0 +1,3847 @@
+.moduleRoot {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: auto;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(170, 128, 255, 0.2), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(95, 65, 190, 0.16), transparent 46%),
+    #070511;
+}
+
+.moduleRoot :global(.visual-lab-page) {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: 16px 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(170, 128, 255, 0.14), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(95, 65, 190, 0.12), transparent 46%),
+    #070511;
+}
+
+.moduleRoot :global(.visual-lab-device) {
+  position: relative;
+  width: min(520px, calc(100vw - 32px));
+  isolation: isolate;
+}
+
+.moduleRoot :global(.visual-lab-device::before),
+.moduleRoot :global(.visual-lab-device::after) {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.moduleRoot :global(.visual-lab-device .visual-lab-surface) {
+  position: relative;
+  z-index: 1;
+}
+
+.moduleRoot :global(.visual-lab-device::before) {
+  inset: -16px;
+  border-radius: 38px;
+  background: linear-gradient(135deg, rgba(248, 244, 255, 0.32), rgba(164, 132, 255, 0.4), rgba(248, 244, 255, 0.22));
+  filter: blur(12px);
+  opacity: 0.72;
+  animation: visualLabGlowBreathe 6.8s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-device::after) {
+  inset: -34px;
+  border-radius: 52px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(248, 244, 255, 0.3), transparent 58%),
+    radial-gradient(ellipse at 0% 50%, rgba(149, 111, 255, 0.26), transparent 56%),
+    radial-gradient(ellipse at 100% 50%, rgba(190, 166, 255, 0.24), transparent 56%),
+    radial-gradient(ellipse at 50% 100%, rgba(248, 244, 255, 0.22), transparent 58%);
+  filter: blur(24px);
+  opacity: 0.78;
+  animation: visualLabGlowBreatheWide 7.6s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle) {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.moduleRoot :global(.visual-lab-surface) {
+  position: relative;
+  overflow: hidden;
+  height: min(980px, calc(100svh - 32px));
+  min-height: 920px;
+  display: grid;
+  grid-template-rows: 54px 300px 142px 40px 1fr 70px 28px;
+  padding: 24px;
+  border: 1px solid rgba(238, 232, 255, 0.17);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.16) 0.6px, transparent 0.95px),
+    radial-gradient(circle at 50% 24%, rgba(247, 243, 255, 0.12) 0.7px, transparent 0.95px),
+    radial-gradient(circle at 50% 72%, rgba(247, 243, 255, 0.06) 0.7px, transparent 0.95px),
+    linear-gradient(180deg, rgba(142, 118, 255, 0.16), rgba(255, 255, 255, 0.025) 44%, rgba(122, 94, 230, 0.08)),
+    #0b0a12;
+  background-size: 6px 6px, 14px 14px, 16px 16px, auto, auto;
+  color: #f8f4ff;
+  box-shadow:
+    0 28px 88px rgba(0, 0, 0, 0.62),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035),
+    inset 0 0 68px rgba(146, 119, 255, 0.13);
+}
+
+.moduleRoot :global(.visual-lab-surface::before),
+.moduleRoot :global(.visual-lab-surface::after) {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.moduleRoot :global(.visual-lab-surface::before) {
+  inset: -18%;
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(248, 244, 255, 0.18), transparent 42%),
+    radial-gradient(ellipse at 50% 48%, rgba(149, 111, 255, 0.12), transparent 46%),
+    radial-gradient(ellipse at 50% 82%, rgba(248, 244, 255, 0.07), transparent 44%);
+  filter: blur(16px);
+  opacity: 0.74;
+  animation: visualLabInnerBreathe 8.4s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-surface::after) {
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.12) 0.55px, transparent 0.9px),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(248, 244, 255, 0.08), transparent 32%, rgba(149, 111, 255, 0.04) 62%, transparent),
+    radial-gradient(ellipse at 16% 36%, rgba(190, 166, 255, 0.08), transparent 38%),
+    radial-gradient(ellipse at 88% 58%, rgba(248, 244, 255, 0.06), transparent 40%),
+    radial-gradient(ellipse 76% 48% at 50% 104%, rgba(207, 159, 255, 0.5), rgba(137, 86, 242, 0.22) 38%, transparent 72%),
+    radial-gradient(ellipse 46% 44% at 0% 100%, rgba(146, 91, 255, 0.34), transparent 72%),
+    radial-gradient(ellipse 46% 44% at 100% 100%, rgba(188, 139, 255, 0.3), transparent 72%),
+    linear-gradient(0deg, rgba(174, 126, 255, 0.16), rgba(174, 126, 255, 0.055) 24%, transparent 42%);
+  background-size: 6px 6px, 100% 5px, auto, auto, auto, auto, auto, auto, auto;
+  opacity: 0.82;
+  animation: visualLabInnerDrift 9.2s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-surface > *) {
+  position: relative;
+  z-index: 1;
+}
+
+.moduleRoot :global(.visual-lab-header),
+.moduleRoot :global(.visual-lab-brand),
+.moduleRoot :global(.visual-lab-actions),
+.moduleRoot :global(.visual-lab-controls),
+.moduleRoot :global(.visual-lab-player-main),
+.moduleRoot :global(.visual-lab-player-actions),
+.moduleRoot :global(.visual-lab-progress-row),
+.moduleRoot :global(.visual-lab-times),
+.moduleRoot :global(.visual-lab-queue),
+.moduleRoot :global(.visual-lab-host-status),
+.moduleRoot :global(.visual-lab-input),
+.moduleRoot :global(.visual-lab-status) {
+  display: flex;
+  align-items: center;
+}
+
+.moduleRoot :global(.visual-lab-header) {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.moduleRoot :global(.visual-lab-brand) {
+  gap: 9px;
+}
+
+.moduleRoot :global(.visual-lab-avatar) {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 37%, rgba(255, 255, 255, 0.95) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 50% 76%, rgba(255, 255, 255, 0.72) 0 8px, transparent 8.5px),
+    linear-gradient(145deg, rgba(174, 153, 255, 0.28), rgba(255, 255, 255, 0.06));
+}
+
+.moduleRoot :global(.visual-lab-avatar span) {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(15, 12, 24, 0.62);
+  box-shadow:
+    -4px -2px 0 rgba(15, 12, 24, 0.5),
+    4px -2px 0 rgba(15, 12, 24, 0.5);
+}
+
+.moduleRoot :global(.visual-lab-dot-label) {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 2px;
+}
+
+.moduleRoot :global(.visual-lab-dot-letter) {
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  grid-template-rows: repeat(5, 4px);
+  gap: 2px;
+}
+
+.moduleRoot :global(.visual-lab-dot-letter i) {
+  width: 4px;
+  height: 4px;
+  border-radius: 1.5px;
+  background: transparent;
+}
+
+.moduleRoot :global(.visual-lab-dot-letter i.on) {
+  background: #ffffff;
+  box-shadow:
+    0 0 2px rgba(255, 255, 255, 0.88),
+    0 0 8px rgba(248, 244, 255, 0.42);
+}
+
+.moduleRoot :global(.visual-lab-actions) {
+  gap: 8px;
+  color: rgba(248, 244, 255, 0.56);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-library-button) {
+  display: inline-flex;
+  height: 27px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid rgba(126, 255, 218, 0.18);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.1) 0 0.55px, transparent 0.96px),
+    rgba(255, 255, 255, 0.045);
+  background-size: 7px 7px, auto;
+  color: rgba(248, 244, 255, 0.72);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.moduleRoot :global(.visual-lab-library-button > span) {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(126, 255, 218, 0.74);
+  box-shadow: 0 0 10px rgba(80, 216, 191, 0.45);
+}
+
+.moduleRoot :global(.visual-lab-library-button:hover),
+.moduleRoot :global(.visual-lab-library-button.is-open) {
+  border-color: rgba(126, 255, 218, 0.42);
+  background:
+    radial-gradient(circle, rgba(126, 255, 218, 0.12) 0 0.55px, transparent 0.96px),
+    rgba(80, 216, 191, 0.1);
+  color: #f8f4ff;
+  box-shadow: 0 0 16px rgba(80, 216, 191, 0.12);
+}
+
+.moduleRoot :global(.visual-lab-switch) {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 92px;
+  height: 27px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.moduleRoot :global(.visual-lab-switch::before) {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  border-radius: 999px;
+  background: #f7f3ff;
+  transition: transform 180ms ease;
+}
+
+.moduleRoot :global(.visual-lab-switch span) {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: rgba(248, 244, 255, 0.55);
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.moduleRoot :global(.visual-lab-switch span:first-child) {
+  color: #171221;
+}
+
+.moduleRoot :global(.visual-lab-clock) {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  margin: 0 -24px;
+  padding: 18px 24px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.052) 0.55px, transparent 0.95px),
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.07), transparent 28%),
+    linear-gradient(180deg, rgba(7, 10, 22, 0.98), rgba(1, 2, 7, 0.995) 54%, rgba(5, 4, 13, 0.99)),
+    #010207;
+  background-size: 6px 6px, auto, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 0 34px rgba(0, 0, 0, 0.84),
+    0 14px 28px rgba(0, 0, 0, 0.26);
+  text-align: center;
+}
+
+.moduleRoot :global(.visual-lab-clock::before) {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 0.55px, transparent 0.95px),
+    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 6px 6px, 100% 5px, 7px 100%;
+  opacity: 0.34;
+}
+
+.moduleRoot :global(.visual-lab-clock > *) {
+  position: relative;
+  z-index: 1;
+}
+
+.moduleRoot :global(.visual-lab-dot-clock) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.moduleRoot :global(.visual-lab-dot-char) {
+  display: grid;
+  grid-template-columns: repeat(5, 9px);
+  grid-template-rows: repeat(7, 9px);
+  gap: 6px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon) {
+  grid-template-columns: 7px;
+  margin: 0 1px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char i) {
+  width: 7px;
+  height: 7px;
+  align-self: center;
+  justify-self: center;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.012);
+  opacity: 0.1;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon i) {
+  width: 5px;
+  height: 5px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char i.on) {
+  background: #ffffff;
+  opacity: 1;
+  box-shadow:
+    0 0 3px rgba(255, 255, 255, 0.95),
+    0 0 8px rgba(255, 255, 255, 0.5),
+    0 0 14px rgba(168, 190, 255, 0.24);
+}
+
+.moduleRoot :global(.visual-lab-date),
+.moduleRoot :global(.visual-lab-onair) {
+  margin: 0;
+  color: rgba(248, 244, 255, 0.5);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.moduleRoot :global(.visual-lab-date) {
+  margin-top: 19px;
+}
+
+.moduleRoot :global(.visual-lab-onair) {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-surface.is-on-air .visual-lab-onair) {
+  color: #50d8bf;
+  text-shadow:
+    0 0 8px rgba(80, 216, 191, 0.62),
+    0 0 18px rgba(80, 216, 191, 0.32);
+}
+
+.moduleRoot :global(.visual-lab-onair::before) {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.5);
+}
+
+.moduleRoot :global(.visual-lab-surface.is-on-air .visual-lab-onair::before) {
+  background: #50d8bf;
+  box-shadow:
+    0 0 9px rgba(80, 216, 191, 0.86),
+    0 0 18px rgba(80, 216, 191, 0.42);
+}
+
+.moduleRoot :global(.visual-lab-player) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 12px;
+  margin-top: 0;
+  padding: 5px 2px 4px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 0;
+  background: linear-gradient(90deg, transparent, rgba(217, 201, 255, 0.012), transparent);
+  box-shadow: none;
+}
+
+.moduleRoot :global(.visual-lab-player-strip) {
+  display: grid;
+  grid-template-rows: 48px 24px;
+  align-self: center;
+  width: 100%;
+  height: 88px;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border-top: 1px solid rgba(248, 244, 255, 0.1);
+  border-bottom: 1px solid rgba(248, 244, 255, 0.09);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(96, 78, 138, 0.2), rgba(24, 21, 35, 0.12)),
+    rgba(17, 13, 29, 0.16);
+}
+
+.moduleRoot :global(.visual-lab-player-main) {
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+.moduleRoot :global(.visual-lab-track) {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+  text-align: left;
+}
+
+.moduleRoot :global(.visual-lab-track-info) {
+  display: grid;
+  min-width: 0;
+  align-content: center;
+  gap: 5px;
+  text-align: left;
+}
+
+.moduleRoot :global(.visual-lab-track span),
+.moduleRoot :global(.visual-lab-track-info span),
+.moduleRoot :global(.visual-lab-queue),
+.moduleRoot :global(.visual-lab-status),
+.moduleRoot :global(.visual-lab-host-status em) {
+  color: rgba(248, 244, 255, 0.56);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.moduleRoot :global(.visual-lab-track strong) {
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moduleRoot :global(.visual-lab-track-info strong),
+.moduleRoot :global(.visual-lab-track-title) {
+  overflow: hidden;
+  color: #f8f4ff;
+  font-size: 15px;
+  line-height: 1.12;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moduleRoot :global(.visual-lab-track span) {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  opacity: 0.72;
+}
+
+.moduleRoot :global(.visual-lab-track-info span),
+.moduleRoot :global(.visual-lab-track-status) {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+.moduleRoot :global(.visual-lab-controls) {
+  justify-content: center;
+  gap: 4px;
+  margin-top: 0;
+}
+
+.moduleRoot :global(.visual-lab-player-actions) {
+  justify-content: flex-end;
+  gap: 7px;
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+.moduleRoot :global(.visual-lab-controls button),
+.moduleRoot :global(.visual-lab-player-actions button),
+.moduleRoot :global(.visual-lab-input button) {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.014);
+  color: #f8f4ff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.moduleRoot :global(.visual-lab-controls button) {
+  min-width: 27px;
+  height: 17px;
+  border-radius: 999px;
+  font-size: 6px;
+  font-weight: 800;
+  opacity: 0.7;
+}
+
+.moduleRoot :global(.visual-lab-player-actions button) {
+  min-width: 34px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: #f8f4ff;
+  font-size: 7px;
+  font-weight: 800;
+  opacity: 0.82;
+}
+
+.moduleRoot :global(.visual-lab-controls .visual-lab-play) {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.038);
+  box-shadow: 0 0 10px rgba(247, 243, 255, 0.08);
+  opacity: 0.86;
+}
+
+.moduleRoot :global(.visual-lab-controls button[aria-pressed="true"]) {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(248, 244, 255, 0.14);
+  opacity: 1;
+}
+
+.moduleRoot :global(.visual-lab-progress) {
+  grid-column: 1 / 3;
+  height: 2px;
+  margin-top: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.moduleRoot :global(.visual-lab-progress-row) {
+  justify-content: space-between;
+  align-self: end;
+  gap: 10px;
+  min-width: 0;
+  color: rgba(248, 244, 255, 0.58);
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 9px;
+}
+
+.moduleRoot :global(.visual-lab-progress-row > span) {
+  flex: 0 0 auto;
+}
+
+.moduleRoot :global(.visual-lab-progress-bar) {
+  flex: 1;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(248, 244, 255, 0.13);
+}
+
+.moduleRoot :global(.visual-lab-progress-bar span) {
+  display: block;
+  width: 12%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.moduleRoot :global(.visual-lab-progress span) {
+  display: block;
+  width: 12%;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.42);
+}
+
+.visual-lab-playbar {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 52px 24px;
+  width: calc(100% + 12px);
+  height: 92px;
+  align-self: center;
+  margin-inline: -6px;
+  padding: 10px 10px 8px;
+  border-top: 1px solid rgba(248, 244, 255, 0.12);
+  border-bottom: 1px solid rgba(248, 244, 255, 0.1);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.072) 14%, rgba(255, 255, 255, 0.062) 82%, rgba(255, 255, 255, 0.018)),
+    rgba(18, 15, 27, 0.18);
+}
+
+.visual-lab-playbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.visual-lab-playbar-left {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.visual-lab-eq {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.visual-lab-eq span {
+  width: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.visual-lab-eq span:nth-child(1) {
+  height: 8px;
+  background: rgba(154, 255, 190, 0.85);
+}
+
+.visual-lab-eq span:nth-child(2) {
+  height: 17px;
+}
+
+.visual-lab-eq span:nth-child(3) {
+  height: 12px;
+  background: rgba(154, 255, 190, 0.82);
+}
+
+.visual-lab-eq span:nth-child(4) {
+  height: 20px;
+}
+
+.visual-lab-song-meta {
+  min-width: 0;
+}
+
+.visual-lab-song-title {
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.12;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visual-lab-song-status {
+  margin-top: 2px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+}
+
+.visual-lab-playbar-controls {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 3px;
+}
+
+.visual-lab-playbar-controls button {
+  min-width: 19px;
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8f4ff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.78;
+}
+
+.visual-lab-volume-label {
+  color: rgba(248, 244, 255, 0.58);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.visual-lab-volume-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.visual-lab-playbar-bottom {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 6px;
+  color: rgba(248, 244, 255, 0.75);
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 10px;
+}
+
+.visual-lab-playbar-bottom span:last-child {
+  text-align: right;
+}
+
+.visual-lab-playbar-progress {
+  position: relative;
+  height: 2px;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.visual-lab-playbar-progress i {
+  display: block;
+  width: 18%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.moduleRoot :global(.visual-lab-times),
+.moduleRoot :global(.visual-lab-queue),
+.moduleRoot :global(.visual-lab-status) {
+  justify-content: space-between;
+}
+
+.moduleRoot :global(.visual-lab-times) {
+  grid-column: 1 / 3;
+  margin-top: 2px;
+  color: rgba(248, 244, 255, 0.58);
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 8px;
+}
+
+.moduleRoot :global(.visual-lab-queue) {
+  min-height: 28px;
+  padding: 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(0, 0, 0, 0.11);
+}
+
+.moduleRoot :global(.visual-lab-terminal-line) {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 22px;
+  padding: 7px 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
+  color: rgba(248, 244, 255, 0.28);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-terminal-line span) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moduleRoot :global(.visual-lab-host) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+  margin-top: 0;
+  padding-top: 12px;
+}
+
+.moduleRoot :global(.visual-lab-host-status) {
+  gap: 8px;
+}
+
+.moduleRoot :global(.visual-lab-host-status span) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.68);
+}
+
+.moduleRoot :global(.visual-lab-host-status strong) {
+  font-size: 13px;
+}
+
+.moduleRoot :global(.visual-lab-host-status em) {
+  margin-left: auto;
+  font-style: normal;
+}
+
+.moduleRoot :global(.visual-lab-bubble) {
+  max-width: 292px;
+  margin: 12px 0 0 16px;
+  padding: 12px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  border-top-left-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(248, 244, 255, 0.78);
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.moduleRoot :global(.visual-lab-input) {
+  align-self: center;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.moduleRoot :global(.visual-lab-input.is-listening) {
+  border-color: rgba(126, 255, 218, 0.22);
+  box-shadow:
+    0 0 18px rgba(80, 216, 191, 0.08),
+    inset 0 0 0 1px rgba(126, 255, 218, 0.06);
+}
+
+.moduleRoot :global(.visual-lab-input span) {
+  flex: 1;
+  min-width: 0;
+  padding-left: 7px;
+  color: rgba(248, 244, 255, 0.48);
+  font-size: 12px;
+}
+
+.moduleRoot :global(.visual-lab-input input) {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(248, 244, 255, 0.86);
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+  padding-left: 7px;
+}
+
+.moduleRoot :global(.visual-lab-input input::placeholder) {
+  color: rgba(248, 244, 255, 0.42);
+}
+
+.moduleRoot :global(.visual-lab-input button) {
+  display: grid;
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.moduleRoot :global(.visual-lab-input button:hover) {
+  transform: translateY(-1px);
+}
+
+.moduleRoot :global(.visual-lab-input button .visual-lab-input-icon) {
+  display: grid;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  min-width: 0;
+  place-items: center;
+  padding-left: 0;
+  color: inherit;
+  font-size: 0;
+}
+
+.moduleRoot :global(.visual-lab-input button svg) {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.05;
+}
+
+.moduleRoot :global(.visual-lab-input-loading) {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 999px;
+  animation: visualLabSpin 820ms linear infinite;
+}
+
+.moduleRoot :global(.visual-lab-input .visual-lab-mic-button) {
+  border-color: rgba(248, 244, 255, 0.16);
+  background: rgba(255, 255, 255, 0.052);
+  color: rgba(248, 244, 255, 0.64);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.moduleRoot :global(.visual-lab-input .visual-lab-mic-button.is-listening) {
+  border-color: rgba(126, 255, 218, 0.58);
+  background: rgba(80, 216, 191, 0.14);
+  color: rgba(126, 255, 218, 0.94);
+  box-shadow:
+    0 0 18px rgba(80, 216, 191, 0.2),
+    inset 0 0 0 1px rgba(126, 255, 218, 0.18);
+}
+
+.moduleRoot :global(.visual-lab-input .visual-lab-send-button) {
+  border-color: rgba(248, 244, 255, 0.13);
+  background: rgba(248, 244, 255, 0.075);
+  color: rgba(248, 244, 255, 0.48);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.moduleRoot :global(.visual-lab-input.has-text .visual-lab-send-button) {
+  border-color: rgba(248, 244, 255, 0.86);
+  background: #f8f4ff;
+  color: #101016;
+  box-shadow:
+    0 0 14px rgba(248, 244, 255, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.52);
+}
+
+@keyframes visualLabSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moduleRoot :global(.visual-lab-input button:disabled) {
+  cursor: wait;
+  opacity: 0.52;
+}
+
+.moduleRoot :global(.visual-lab-status) {
+  align-self: end;
+  margin-top: 0;
+  padding: 0 4px;
+}
+
+.moduleRoot :global(.visual-lab-player) {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  align-content: center;
+  gap: 13px;
+  padding: 16px 18px;
+  border-top-color: rgba(255, 255, 255, 0.075);
+  border-bottom-color: rgba(255, 255, 255, 0.075);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.018), rgba(217, 201, 255, 0.042), rgba(255, 255, 255, 0.018));
+}
+
+.moduleRoot :global(.visual-lab-player-info) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  min-width: 0;
+}
+
+.moduleRoot :global(.visual-lab-track) {
+  gap: 5px;
+}
+
+.moduleRoot :global(.visual-lab-track strong) {
+  font-size: 20px;
+  line-height: 1.08;
+}
+
+.moduleRoot :global(.visual-lab-track span),
+.moduleRoot :global(.visual-lab-player-state) {
+  color: rgba(248, 244, 255, 0.56);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.moduleRoot :global(.visual-lab-player-state) {
+  flex: 0 0 auto;
+  padding-top: 2px;
+  color: rgba(248, 244, 255, 0.72);
+  font-weight: 900;
+}
+
+.moduleRoot :global(.visual-lab-controls) {
+  gap: 12px;
+}
+
+.moduleRoot :global(.visual-lab-controls button) {
+  min-width: 50px;
+  height: 28px;
+  font-size: 9px;
+  opacity: 0.76;
+}
+
+.moduleRoot :global(.visual-lab-controls .visual-lab-play) {
+  opacity: 0.9;
+}
+
+.moduleRoot :global(.visual-lab-progress-row) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  color: rgba(248, 244, 255, 0.58);
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 10px;
+}
+
+.moduleRoot :global(.visual-lab-progress) {
+  grid-column: auto;
+  height: 4px;
+  margin-top: 0;
+}
+
+.moduleRoot :global(.visual-lab-host) {
+  padding-top: 18px;
+}
+
+.moduleRoot :global(.visual-lab-host-status) {
+  gap: 12px;
+}
+
+.moduleRoot :global(.visual-lab-host-status .visual-lab-chat-avatar),
+.moduleRoot :global(.visual-lab-user-avatar) {
+  position: relative;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.95) 0 6px, transparent 6.5px),
+    radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.66) 0 12px, transparent 12.5px),
+    linear-gradient(145deg, rgba(174, 153, 255, 0.28), rgba(255, 255, 255, 0.055));
+  box-shadow: none;
+}
+
+.moduleRoot :global(.visual-lab-chat-avatar span),
+.moduleRoot :global(.visual-lab-user-avatar span) {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(15, 12, 24, 0.62);
+  box-shadow:
+    -5px -2px 0 rgba(15, 12, 24, 0.48),
+    5px -2px 0 rgba(15, 12, 24, 0.48);
+}
+
+.moduleRoot :global(.visual-lab-user-avatar) {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(199, 228, 255, 0.95) 0 6px, transparent 6.5px),
+    radial-gradient(circle at 50% 76%, rgba(139, 177, 255, 0.62) 0 12px, transparent 12.5px),
+    linear-gradient(145deg, rgba(113, 145, 255, 0.28), rgba(255, 255, 255, 0.055));
+}
+
+.moduleRoot :global(.visual-lab-host-status strong) {
+  font-size: 16px;
+}
+
+.moduleRoot :global(.visual-lab-host-name) {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 0;
+}
+
+.moduleRoot :global(.visual-lab-host-name:hover),
+.moduleRoot :global(.visual-lab-host-name:focus-visible) {
+  color: #ffffff;
+  outline: none;
+  text-shadow: 0 0 10px rgba(248, 244, 255, 0.34);
+}
+
+.moduleRoot :global(.visual-lab-host-avatar-wrap) {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  outline: none;
+  pointer-events: auto;
+}
+
+.moduleRoot :global(.visual-lab-host-avatar-wrap .visual-lab-chat-avatar) {
+  cursor: default;
+}
+
+.moduleRoot :global(.visual-lab-host-avatar-wrap .visual-lab-chat-avatar.is-speaking) {
+  border-color: rgba(126, 255, 160, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(126, 255, 160, 0.32),
+    0 0 18px rgba(126, 255, 160, 0.34);
+}
+
+.moduleRoot :global(.visual-lab-host-avatar-wrap .visual-lab-chat-avatar.is-speaking::before),
+.moduleRoot :global(.visual-lab-host-avatar-wrap .visual-lab-chat-avatar.is-speaking::after) {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px solid rgba(126, 255, 160, 0.7);
+  border-radius: inherit;
+  pointer-events: none;
+  animation: visualLabAvatarSpeaking 1s ease-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-host-avatar-wrap .visual-lab-chat-avatar.is-speaking::after) {
+  inset: -9px;
+  animation-delay: 0.28s;
+  opacity: 0.55;
+}
+
+.moduleRoot :global(.visual-lab-avatar-upload) {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.moduleRoot :global(.visual-lab-avatar-upload input) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.moduleRoot :global(.visual-lab-avatar-upload:hover .visual-lab-chat-avatar),
+.moduleRoot :global(.visual-lab-avatar-upload:hover .visual-lab-user-avatar) {
+  border-color: rgba(248, 244, 255, 0.42);
+  box-shadow: 0 0 18px rgba(170, 100, 255, 0.24);
+}
+
+.moduleRoot :global(.visual-lab-chat-avatar img),
+.moduleRoot :global(.visual-lab-user-avatar img) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.moduleRoot :global(.visual-lab-host-card) {
+  position: absolute;
+  left: 58px;
+  top: -18px;
+  z-index: 8;
+  width: 332px;
+  padding: 18px;
+  border: 1px solid rgba(248, 244, 255, 0.13);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.13) 0 0.62px, transparent 1px),
+    linear-gradient(180deg, rgba(15, 16, 19, 0.97), rgba(7, 8, 10, 0.98));
+  background-size: 7px 7px, auto;
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.62),
+    0 0 34px rgba(155, 90, 255, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+  color: #f8f4ff;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-8px) scale(0.98);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.moduleRoot :global(.visual-lab-host-avatar-wrap:hover .visual-lab-host-card),
+.moduleRoot :global(.visual-lab-host-avatar-wrap:focus .visual-lab-host-card),
+.moduleRoot :global(.visual-lab-host-avatar-wrap:focus-within .visual-lab-host-card),
+.moduleRoot :global(.visual-lab-host-avatar-wrap.is-open .visual-lab-host-card) {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+
+.moduleRoot :global(.visual-lab-host-card-head) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.moduleRoot :global(.visual-lab-host-card-head .visual-lab-chat-avatar) {
+  width: 54px;
+  height: 54px;
+}
+
+.moduleRoot :global(.visual-lab-host-card-head strong) {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-host-card-name) {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-host-card-name:hover),
+.moduleRoot :global(.visual-lab-host-card-name:focus-visible) {
+  color: #ffffff;
+  outline: none;
+  text-shadow: 0 0 12px rgba(248, 244, 255, 0.36);
+}
+
+.moduleRoot :global(.visual-lab-host-card-head p),
+.moduleRoot :global(.visual-lab-host-card-copy) {
+  margin: 0;
+}
+
+.moduleRoot :global(.visual-lab-host-card-head p) {
+  margin-top: 6px;
+  color: rgba(126, 255, 218, 0.76);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.moduleRoot :global(.visual-lab-host-card-copy) {
+  margin-top: 22px;
+  color: rgba(248, 244, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.moduleRoot :global(.visual-lab-host-card-stats) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(248, 244, 255, 0.1);
+}
+
+.moduleRoot :global(.visual-lab-host-card-stats div) {
+  display: grid;
+  gap: 4px;
+}
+
+.moduleRoot :global(.visual-lab-host-card-stats small) {
+  color: rgba(248, 244, 255, 0.38);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.moduleRoot :global(.visual-lab-host-card-stats strong) {
+  font-size: 17px;
+}
+
+.moduleRoot :global(.visual-lab-host-card-tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.moduleRoot :global(.visual-lab-host-card-tags b) {
+  padding: 5px 8px;
+  border: 1px solid rgba(248, 244, 255, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(248, 244, 255, 0.62);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-profile-panel) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 9;
+  width: min(440px, calc(100% - 46px));
+  min-height: 560px;
+  padding: 32px 34px;
+  border: 1px solid rgba(248, 244, 255, 0.14);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.13) 0 0.62px, transparent 1px),
+    radial-gradient(circle at 64% 60%, rgba(40, 220, 185, 0.2), transparent 28%),
+    linear-gradient(180deg, rgba(14, 15, 18, 0.98), rgba(6, 7, 9, 0.99));
+  background-size: 8px 8px, auto, auto;
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.72),
+    0 0 42px rgba(155, 90, 255, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+  color: #f8f4ff;
+  transform: translate(-50%, -50%);
+}
+
+.moduleRoot :global(.visual-lab-profile-panel > button) {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  height: 26px;
+  padding: 0 10px;
+  border: 1px solid rgba(248, 244, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(248, 244, 255, 0.68);
+  cursor: pointer;
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.moduleRoot :global(.visual-lab-profile-head) {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.moduleRoot :global(.visual-lab-profile-head .visual-lab-chat-avatar) {
+  display: grid;
+  width: 74px;
+  height: 74px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.95) 0 10px, transparent 10.5px),
+    radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.66) 0 22px, transparent 22.5px),
+    linear-gradient(145deg, rgba(174, 153, 255, 0.28), rgba(255, 255, 255, 0.055));
+  overflow: hidden;
+}
+
+.moduleRoot :global(.visual-lab-profile-head .visual-lab-chat-avatar span) {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(15, 12, 24, 0.62);
+  box-shadow:
+    -8px -3px 0 rgba(15, 12, 24, 0.48),
+    8px -3px 0 rgba(15, 12, 24, 0.48);
+}
+
+.moduleRoot :global(.visual-lab-profile-head strong) {
+  display: block;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-profile-head p),
+.moduleRoot :global(.visual-lab-profile-copy) {
+  margin: 0;
+}
+
+.moduleRoot :global(.visual-lab-profile-head p) {
+  margin-top: 8px;
+  color: rgba(126, 255, 218, 0.78);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.moduleRoot :global(.visual-lab-profile-copy) {
+  margin-top: 36px;
+  max-width: 340px;
+  color: rgba(248, 244, 255, 0.68);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.moduleRoot :global(.visual-lab-profile-stats) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(248, 244, 255, 0.1);
+}
+
+.moduleRoot :global(.visual-lab-profile-stats div) {
+  display: grid;
+  gap: 6px;
+}
+
+.moduleRoot :global(.visual-lab-profile-stats small) {
+  color: rgba(248, 244, 255, 0.36);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.moduleRoot :global(.visual-lab-profile-stats strong) {
+  font-size: 22px;
+}
+
+.moduleRoot :global(.visual-lab-profile-tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.moduleRoot :global(.visual-lab-profile-tags b) {
+  padding: 7px 10px;
+  border: 1px solid rgba(248, 244, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(248, 244, 255, 0.68);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-message) {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.moduleRoot :global(.visual-lab-message p) {
+  max-width: 348px;
+  margin: 0;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(248, 244, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.moduleRoot :global(.visual-lab-message-host) {
+  margin: 18px 0 0 54px;
+}
+
+.moduleRoot :global(.visual-lab-message-host p) {
+  border-top-left-radius: 4px;
+}
+
+.moduleRoot :global(.visual-lab-host-reply) {
+  display: grid;
+  gap: 11px;
+  justify-items: start;
+}
+
+.moduleRoot :global(.visual-lab-reply-voice-button) {
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid rgba(126, 255, 218, 0.38);
+  border-radius: 999px;
+  background: rgba(126, 255, 218, 0.12);
+  color: rgba(248, 244, 255, 0.9);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  box-shadow:
+    0 0 18px rgba(80, 216, 191, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.moduleRoot :global(.visual-lab-reply-voice-button:hover),
+.moduleRoot :global(.visual-lab-reply-voice-button:focus-visible) {
+  border-color: rgba(126, 255, 218, 0.58);
+  background: rgba(126, 255, 218, 0.14);
+  color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 18px rgba(80, 216, 191, 0.18);
+}
+
+.moduleRoot :global(.visual-lab-reply-voice-button span) {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(248, 244, 255, 0.9);
+  color: #111018;
+  font-size: 8px;
+  line-height: 1;
+}
+
+.moduleRoot :global(.visual-lab-reply-voice-button:disabled) {
+  cursor: default;
+  opacity: 0.54;
+}
+
+.moduleRoot :global(.visual-lab-reply-voice-button:disabled span) {
+  background: rgba(248, 244, 255, 0.34);
+}
+
+.moduleRoot :global(.visual-lab-message-user) {
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.moduleRoot :global(.visual-lab-user-identity) {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  align-self: flex-start;
+}
+
+.moduleRoot :global(.visual-lab-user-name) {
+  color: rgba(248, 244, 255, 0.66);
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-user-name) {
+  color: rgba(17, 16, 24, 0.58);
+}
+
+.moduleRoot :global(.visual-lab-message-user p) {
+  max-width: 260px;
+  border-top-right-radius: 4px;
+  background: rgba(255, 255, 255, 0.038);
+  color: rgba(248, 244, 255, 0.68);
+}
+
+.moduleRoot :global(.visual-lab-input) {
+  gap: 8px;
+  padding: 6px;
+}
+
+.moduleRoot :global(.visual-lab-input button) {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface) {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(92, 73, 160, 0.13) 0.7px, transparent 0.95px),
+    radial-gradient(circle at 50% 72%, rgba(92, 73, 160, 0.06) 0.7px, transparent 0.95px),
+    linear-gradient(180deg, rgba(252, 250, 255, 0.94), rgba(232, 227, 247, 0.78) 62%, rgba(218, 214, 235, 0.7)),
+    #f1eef8;
+  color: #1a1626;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-switch::before) {
+  transform: translateX(100%);
+  background: #2f255c;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-switch span) {
+  color: rgba(26, 22, 38, 0.48);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-switch span:last-child) {
+  color: #f8f4ff;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-dot-letter i.on) {
+  background: #2f255c;
+  box-shadow:
+    0 0 1px rgba(47, 37, 92, 0.5),
+    0 0 6px rgba(103, 82, 178, 0.22);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-dot-char i.on),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-onair),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-controls button),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player-actions button),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input button) {
+  color: #2f255c;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-dot-char i.on),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-onair::before),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-status span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress-bar span) {
+  background: #2f255c;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-actions),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-track span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-track-info span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-status),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-status em),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-times),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress-row),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-date),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-terminal-line) {
+  color: rgba(26, 22, 38, 0.56);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-bubble) {
+  color: rgba(26, 22, 38, 0.72);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player-state) {
+  color: rgba(47, 37, 92, 0.72);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-status .visual-lab-chat-avatar),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-user-avatar) {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(47, 37, 92, 0.86) 0 6px, transparent 6.5px),
+    radial-gradient(circle at 50% 75%, rgba(47, 37, 92, 0.44) 0 12px, transparent 12.5px),
+    linear-gradient(145deg, rgba(115, 93, 190, 0.18), rgba(255, 255, 255, 0.32));
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-message p) {
+  color: rgba(26, 22, 38, 0.72);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock) {
+  border-top-color: rgba(255, 255, 255, 0.16);
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.052) 0.55px, transparent 0.95px),
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.07), transparent 28%),
+    linear-gradient(180deg, rgba(7, 10, 22, 0.98), rgba(1, 2, 7, 0.995) 54%, rgba(5, 4, 13, 0.99)),
+    #010207;
+  background-size: 6px 6px, auto, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-dot-char i) {
+  background: rgba(255, 255, 255, 0.012);
+  opacity: 0.1;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-dot-char i.on) {
+  background: #ffffff;
+  opacity: 1;
+  box-shadow:
+    0 0 3px rgba(255, 255, 255, 0.95),
+    0 0 8px rgba(255, 255, 255, 0.5),
+    0 0 14px rgba(168, 190, 255, 0.24);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-date) {
+  color: rgba(248, 244, 255, 0.5);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-onair) {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-onair::before) {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.5);
+}
+
+.moduleRoot :global(.visual-lab-surface) {
+  grid-template-rows: 54px 340px 150px 40px 1fr 70px 28px;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(247, 243, 255, 0.12) 0.65px, transparent 0.95px),
+    radial-gradient(circle at 50% 72%, rgba(247, 243, 255, 0.045) 0.65px, transparent 0.95px),
+    radial-gradient(circle at 50% 96%, rgba(247, 243, 255, 0.025) 0.65px, transparent 0.95px),
+    linear-gradient(180deg, rgba(20, 19, 27, 0.96), rgba(7, 7, 11, 0.98) 46%, rgba(11, 10, 16, 0.98)),
+    #050509;
+  box-shadow:
+    0 28px 88px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.032),
+    inset 0 0 58px rgba(255, 255, 255, 0.035);
+}
+
+.moduleRoot :global(.visual-lab-surface::before) {
+  background:
+    radial-gradient(ellipse at 50% 16%, rgba(248, 244, 255, 0.12), transparent 40%),
+    radial-gradient(ellipse at 50% 84%, rgba(149, 111, 255, 0.11), transparent 48%);
+  opacity: 0.56;
+}
+
+.moduleRoot :global(.visual-lab-surface::after) {
+  background:
+    linear-gradient(180deg, rgba(248, 244, 255, 0.035), transparent 38%, transparent),
+    radial-gradient(ellipse 72% 44% at 50% 104%, rgba(166, 113, 255, 0.36), rgba(111, 72, 220, 0.16) 42%, transparent 72%),
+    radial-gradient(ellipse 42% 38% at 0% 100%, rgba(140, 88, 255, 0.22), transparent 72%),
+    radial-gradient(ellipse 42% 38% at 100% 100%, rgba(188, 139, 255, 0.18), transparent 72%);
+  opacity: 0.68;
+}
+
+.moduleRoot :global(.visual-lab-dot-clock) {
+  gap: 10px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char) {
+  grid-template-columns: repeat(5, 11px);
+  grid-template-rows: repeat(7, 11px);
+  gap: 7px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon) {
+  grid-template-columns: 9px;
+  margin: 0 2px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char i) {
+  width: 8px;
+  height: 8px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon i) {
+  width: 6px;
+  height: 6px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon i.on) {
+  animation: visualLabBlinkColon 1s steps(1, end) infinite;
+}
+
+.moduleRoot :global(.visual-lab-date) {
+  margin-top: 26px;
+}
+
+.moduleRoot :global(.visual-lab-player) {
+  grid-template-rows: auto auto;
+  gap: 18px;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 20px 20px 18px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left-color: rgba(255, 255, 255, 0.045);
+  border-right-color: rgba(255, 255, 255, 0.045);
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, 0.05), transparent 42%),
+    linear-gradient(180deg, rgba(17, 16, 23, 0.92), rgba(8, 8, 13, 0.92));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.026),
+    inset 0 0 34px rgba(255, 255, 255, 0.025);
+}
+
+.moduleRoot :global(.visual-lab-player::before) {
+  content: "";
+  position: absolute;
+  inset: -9px -7px;
+  z-index: -1;
+  border-radius: 12px;
+  pointer-events: none;
+  border: 1px solid rgba(190, 126, 255, 0.48);
+  box-shadow:
+    0 0 14px rgba(170, 100, 255, 0.5),
+    0 0 32px rgba(130, 80, 255, 0.28);
+  opacity: 0.62;
+  transform: scale(0.988);
+  animation: visualLabPlayerGlowPulse 1.45s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-player-info) {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) auto 116px;
+  column-gap: 10px;
+}
+
+.moduleRoot :global(.visual-lab-player-left) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.moduleRoot :global(.visual-lab-playing-bars) {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.moduleRoot :global(.visual-lab-playing-bars span) {
+  width: 3px;
+  height: 9px;
+  border-radius: 999px;
+  background: #f8f4ff;
+  box-shadow: 0 0 10px rgba(248, 244, 255, 0.36);
+  animation: visualLabPlayingBars 0.9s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-playing-bars:hover span),
+.moduleRoot :global(.visual-lab-playing-bars:focus-visible span),
+.moduleRoot :global(.visual-lab-playing-bars.is-speaking span) {
+  background: #50d8bf;
+  box-shadow: 0 0 11px rgba(80, 216, 191, 0.45);
+}
+
+.moduleRoot :global(.visual-lab-playing-bars:focus-visible) {
+  outline: 1px solid rgba(80, 216, 191, 0.72);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.moduleRoot :global(.visual-lab-playing-bars span:nth-child(2)) {
+  animation-delay: 0.12s;
+}
+
+.moduleRoot :global(.visual-lab-playing-bars span:nth-child(3)) {
+  animation-delay: 0.24s;
+}
+
+.moduleRoot :global(.visual-lab-playing-bars span:nth-child(4)) {
+  animation-delay: 0.36s;
+}
+
+.moduleRoot :global(.visual-lab-track strong) {
+  font-size: 18px;
+  line-height: 1.12;
+}
+
+.moduleRoot :global(.visual-lab-track span) {
+  font-size: 11px;
+}
+
+.moduleRoot :global(.visual-lab-slot-chip) {
+  display: block;
+  overflow: hidden;
+  color: rgba(126, 255, 218, 0.62);
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.moduleRoot :global(.visual-lab-controls) {
+  gap: 6px;
+  flex: 0 0 auto;
+  justify-self: start;
+}
+
+.moduleRoot :global(.visual-lab-controls button) {
+  display: grid;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  place-items: center;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 17px;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.moduleRoot :global(.visual-lab-volume-control) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  justify-self: end;
+  color: #f8f4ff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.82;
+}
+
+.moduleRoot :global(.visual-lab-volume-control input) {
+  width: 72px;
+  height: 16px;
+  margin: 0;
+  accent-color: #f8f4ff;
+  cursor: pointer;
+}
+
+.moduleRoot :global(.visual-lab-volume-control input::-webkit-slider-runnable-track) {
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(248, 244, 255, 0.22);
+}
+
+.moduleRoot :global(.visual-lab-volume-control input::-webkit-slider-thumb) {
+  width: 13px;
+  height: 13px;
+  margin-top: -5px;
+  border: 0;
+  border-radius: 50%;
+  background: #f8f4ff;
+  box-shadow: 0 0 10px rgba(248, 244, 255, 0.35);
+  appearance: none;
+}
+
+.moduleRoot :global(.visual-lab-volume-control input::-moz-range-track) {
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(248, 244, 255, 0.22);
+}
+
+.moduleRoot :global(.visual-lab-volume-control input::-moz-range-thumb) {
+  width: 13px;
+  height: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #f8f4ff;
+  box-shadow: 0 0 10px rgba(248, 244, 255, 0.35);
+}
+
+.moduleRoot :global(.visual-lab-controls .visual-lab-play) {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  border-color: rgba(248, 244, 255, 0.3);
+  background: rgba(248, 244, 255, 0.11);
+}
+
+.moduleRoot :global(.visual-lab-pause-icon) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.moduleRoot :global(.visual-lab-pause-icon span) {
+  display: block;
+  width: 3px;
+  height: 13px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.moduleRoot :global(.visual-lab-progress-row) {
+  gap: 14px;
+  font-size: 11px;
+}
+
+.moduleRoot :global(.visual-lab-progress) {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.moduleRoot :global(.visual-lab-voice-panel) {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  z-index: 7;
+  width: min(430px, calc(100% - 48px));
+  transform: translateX(-50%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.08) 0 0.72px, transparent 1.16px),
+    linear-gradient(180deg, rgba(8, 8, 12, 0.96), rgba(5, 5, 8, 0.94));
+  background-size: 18px 18px, 100% 100%;
+  box-shadow:
+    0 34px 78px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 48px rgba(116, 78, 255, 0.22);
+}
+
+.moduleRoot :global(.visual-lab-voice-panel > button) {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(248, 244, 255, 0.78);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.moduleRoot :global(.visual-lab-voice-wave) {
+  height: 176px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 44px 18px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.moduleRoot :global(.visual-lab-voice-wave span) {
+  width: 2px;
+  flex: 1 1 2px;
+  height: var(--bar);
+  min-height: 10px;
+  border-radius: 999px 999px 0 0;
+  background:
+    linear-gradient(180deg, rgba(248, 244, 255, 0.98), rgba(248, 244, 255, 0.72) 52%, rgba(248, 244, 255, 0.24));
+  opacity: var(--alpha);
+  transform-origin: bottom;
+  animation: visualLabVoiceBars 0.92s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.moduleRoot :global(.visual-lab-voice-wave span:nth-child(5n)),
+.moduleRoot :global(.visual-lab-voice-wave span:nth-child(7n + 2)) {
+  opacity: 0.92;
+}
+
+.moduleRoot :global(.visual-lab-voice-wave span:nth-child(4n + 1)) {
+  background:
+    linear-gradient(180deg, rgba(80, 216, 191, 0.92), rgba(248, 244, 255, 0.62) 60%, rgba(248, 244, 255, 0.2));
+}
+
+.moduleRoot :global(.visual-lab-voice-card) {
+  position: relative;
+  margin: 0;
+  padding: 27px 28px 22px;
+  border-radius: 30px 30px 27px 27px;
+  background: rgba(247, 247, 248, 0.98);
+  color: #111116;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 0 0 1px rgba(17, 17, 22, 0.04);
+}
+
+.moduleRoot :global(.visual-lab-voice-eyebrow),
+.moduleRoot :global(.visual-lab-voice-track) {
+  margin: 0;
+  color: rgba(17, 17, 22, 0.54);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-voice-card h2) {
+  max-width: 260px;
+  margin: 9px 0 6px;
+  color: #111116;
+  font-size: 31px;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.moduleRoot :global(.visual-lab-voice-playline) {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 18px;
+  color: rgba(17, 17, 22, 0.52);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.moduleRoot :global(.visual-lab-voice-playline i) {
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(17, 17, 22, 0.14);
+}
+
+.moduleRoot :global(.visual-lab-voice-playline b) {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #111116;
+}
+
+.moduleRoot :global(.visual-lab-voice-script) {
+  display: grid;
+  gap: 11px;
+  max-height: 230px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(17, 17, 22, 0.055);
+  padding: 17px 18px;
+}
+
+.moduleRoot :global(.visual-lab-voice-script p) {
+  margin: 0;
+  color: rgba(17, 17, 22, 0.78);
+  font-size: 14px;
+  line-height: 1.44;
+}
+
+.moduleRoot :global(.visual-lab-voice-panel.is-speaking .visual-lab-voice-current) {
+  color: rgba(17, 17, 22, 0.5);
+}
+
+.moduleRoot :global(.visual-lab-voice-word) {
+  color: inherit;
+  transition: color 120ms linear, text-shadow 120ms linear, background-color 120ms linear;
+}
+
+.moduleRoot :global(.visual-lab-voice-panel.is-speaking .visual-lab-voice-word.is-spoken) {
+  color: rgba(17, 17, 22, 0.86);
+}
+
+.moduleRoot :global(.visual-lab-voice-panel.is-speaking .visual-lab-voice-word.is-current) {
+  color: #0d1012;
+  border-radius: 4px;
+  background-color: rgba(80, 216, 191, 0.38);
+  text-shadow: 0 0 10px rgba(80, 216, 191, 0.28);
+}
+
+.moduleRoot :global(.visual-lab-voice-panel.is-speaking .visual-lab-voice-current strong) {
+  color: rgba(37, 158, 132, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-voice-panel.is-speaking .visual-lab-voice-card) {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 0 0 1px rgba(68, 217, 179, 0.1),
+    0 0 34px rgba(68, 217, 179, 0.14);
+}
+
+.moduleRoot :global(.visual-lab-voice-script p + p) {
+  opacity: 0.5;
+}
+
+.moduleRoot :global(.visual-lab-voice-script strong) {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(17, 17, 22, 0.46);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-queue) {
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.moduleRoot :global(.visual-lab-device::before),
+.moduleRoot :global(.visual-lab-device::after) {
+  display: block;
+}
+
+.moduleRoot :global(.visual-lab-device::before) {
+  inset: -12px;
+  border-radius: 38px;
+  background:
+    linear-gradient(135deg, rgba(248, 244, 255, 0.18), rgba(166, 99, 255, 0.42), rgba(248, 244, 255, 0.14));
+  filter: blur(14px);
+  opacity: 0.54;
+}
+
+.moduleRoot :global(.visual-lab-device::after) {
+  inset: -30px;
+  border-radius: 54px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(248, 244, 255, 0.18), transparent 58%),
+    radial-gradient(ellipse at 0% 50%, rgba(154, 88, 255, 0.24), transparent 58%),
+    radial-gradient(ellipse at 100% 50%, rgba(203, 142, 255, 0.22), transparent 58%),
+    radial-gradient(ellipse at 50% 100%, rgba(167, 88, 255, 0.24), transparent 62%);
+  filter: blur(24px);
+  opacity: 0.64;
+}
+
+.moduleRoot :global(.visual-lab-surface::after) {
+  z-index: 2;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.2) 0 0.56px, transparent 0.98px),
+    linear-gradient(rgba(248, 244, 255, 0.018) 1px, transparent 1px);
+  background-size: 7px 7px, 100% 7px;
+  mix-blend-mode: screen;
+  opacity: 0.34;
+}
+
+.moduleRoot :global(.visual-lab-player::before) {
+  display: none;
+}
+
+.moduleRoot :global(.visual-lab-surface::before) {
+  display: block;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 82% 18% at 50% 0%, rgba(250, 245, 255, 0.2), rgba(168, 96, 255, 0.14) 44%, transparent 76%),
+    radial-gradient(ellipse 88% 28% at 50% 100%, rgba(190, 95, 255, 0.34), rgba(118, 64, 235, 0.18) 42%, transparent 76%),
+    radial-gradient(ellipse 20% 82% at 0% 50%, rgba(170, 94, 255, 0.28), rgba(120, 70, 230, 0.14) 44%, transparent 76%),
+    radial-gradient(ellipse 20% 82% at 100% 50%, rgba(220, 150, 255, 0.25), rgba(120, 70, 230, 0.12) 44%, transparent 76%);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 22px rgba(210, 152, 255, 0.34),
+    inset 0 0 54px rgba(136, 76, 250, 0.22),
+    0 0 18px rgba(150, 88, 255, 0.18);
+  filter: blur(2px);
+  mix-blend-mode: screen;
+  opacity: 0.62;
+  transform: scale(0.992);
+  animation: visualLabInnerEdgePulse 1.55s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface) {
+  border-color: rgba(63, 50, 112, 0.18);
+  background:
+    radial-gradient(circle, rgba(76, 58, 140, 0.13) 0 0.6px, transparent 1px),
+    linear-gradient(180deg, rgba(250, 248, 255, 0.98), rgba(232, 228, 246, 0.94) 48%, rgba(218, 214, 235, 0.92)),
+    #f1eef8;
+  background-size: 7px 7px, auto, auto;
+  color: #191526;
+  box-shadow:
+    0 24px 76px rgba(73, 58, 120, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+    inset 0 0 60px rgba(91, 70, 160, 0.08);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::before) {
+  background:
+    radial-gradient(ellipse 78% 22% at 50% 0%, rgba(255, 255, 255, 0.5), rgba(150, 120, 220, 0.16) 42%, transparent 72%),
+    radial-gradient(ellipse 78% 24% at 50% 100%, rgba(145, 112, 220, 0.18), rgba(91, 70, 160, 0.1) 42%, transparent 74%),
+    radial-gradient(ellipse 22% 76% at 0% 50%, rgba(126, 96, 205, 0.12), transparent 74%),
+    radial-gradient(ellipse 22% 76% at 100% 50%, rgba(126, 96, 205, 0.12), transparent 74%);
+  opacity: 0.5;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::after) {
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.16) 0 0.56px, transparent 0.98px),
+    linear-gradient(rgba(67, 50, 120, 0.035) 1px, transparent 1px);
+  background-size: 7px 7px, 100% 7px;
+  mix-blend-mode: multiply;
+  opacity: 0.36;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock) {
+  border-top-color: rgba(63, 50, 112, 0.12);
+  border-bottom-color: rgba(63, 50, 112, 0.16);
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.12) 0 0.58px, transparent 0.95px),
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.52), transparent 34%),
+    linear-gradient(180deg, rgba(246, 243, 255, 0.9), rgba(224, 219, 241, 0.76)),
+    #ede9f7;
+  background-size: 7px 7px, auto, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-dot-char i) {
+  background: transparent;
+  opacity: 0.02;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-dot-char i.on) {
+  background: #2b2356;
+  opacity: 1;
+  box-shadow:
+    0 0 2px rgba(43, 35, 86, 0.34),
+    0 0 9px rgba(103, 82, 178, 0.18);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-date),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-onair) {
+  color: rgba(35, 29, 67, 0.58);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player) {
+  border-color: rgba(63, 50, 112, 0.13);
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.08) 0 0.56px, transparent 0.98px),
+    linear-gradient(180deg, rgba(250, 248, 255, 0.52), rgba(219, 214, 236, 0.42));
+  background-size: 7px 7px, auto;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.38),
+    inset 0 0 28px rgba(63, 50, 112, 0.055);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-controls button),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input button) {
+  border-color: rgba(63, 50, 112, 0.18);
+  background: rgba(255, 255, 255, 0.42);
+  color: #2b2356;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-webkit-slider-runnable-track) {
+  background: rgba(63, 50, 112, 0.18);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-webkit-slider-thumb) {
+  background: #2b2356;
+  box-shadow: 0 0 10px rgba(63, 50, 112, 0.22);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-moz-range-track) {
+  background: rgba(63, 50, 112, 0.18);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-moz-range-thumb) {
+  background: #2b2356;
+  box-shadow: 0 0 10px rgba(63, 50, 112, 0.22);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue) {
+  border-bottom-color: rgba(63, 50, 112, 0.16);
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-message p),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card) {
+  border-color: rgba(63, 50, 112, 0.14);
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.08) 0 0.56px, transparent 0.98px),
+    rgba(255, 255, 255, 0.3);
+  background-size: 7px 7px, auto;
+  color: rgba(25, 21, 38, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card) {
+  box-shadow:
+    0 22px 60px rgba(74, 58, 118, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.42);
+}
+
+.moduleRoot:has(:global(.visual-lab-theme-toggle:checked)) {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(170, 146, 230, 0.16), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(190, 176, 230, 0.18), transparent 46%),
+    #f7f5fb;
+}
+
+.moduleRoot:has(:global(.visual-lab-theme-toggle:checked)) :global(.visual-lab-page) {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(170, 146, 230, 0.14), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(190, 176, 230, 0.16), transparent 46%),
+    #f7f5fb;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock) {
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.12) 0 0.58px, transparent 0.95px),
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.78), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(231, 226, 244, 0.86)),
+    #f7f4ff;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player) {
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.08) 0 0.56px, transparent 0.98px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(231, 226, 244, 0.56)),
+    #f8f6fc;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-message p),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input) {
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.08) 0 0.56px, transparent 0.98px),
+    rgba(255, 255, 255, 0.62);
+  background-size: 7px 7px, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue) {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-pet-body) {
+  background:
+    radial-gradient(circle, rgba(67, 50, 120, 0.12) 0 0.8px, transparent 1.2px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(228, 223, 242, 0.86));
+}
+
+.moduleRoot :global(.visual-lab-pet) {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  flex: 0 0 auto;
+  pointer-events: none;
+}
+
+.moduleRoot :global(.visual-lab-brand-pet) {
+  width: 42px;
+  height: 34px;
+  align-items: center;
+  animation: visualLabPetFloat 2.2s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-pet-body) {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 32px;
+  border: 1px solid rgba(248, 244, 255, 0.32);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.22) 0 0.8px, transparent 1.2px),
+    linear-gradient(180deg, rgba(18, 17, 27, 0.94), rgba(6, 6, 11, 0.98));
+  background-size: 5px 5px, auto;
+  box-shadow:
+    0 0 18px rgba(170, 100, 255, 0.32),
+    inset 0 0 16px rgba(248, 244, 255, 0.06);
+}
+
+.moduleRoot :global(.visual-lab-pet-ear) {
+  position: absolute;
+  top: -7px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(248, 244, 255, 0.28);
+  background: rgba(12, 10, 18, 0.94);
+  transform: rotate(45deg);
+}
+
+.moduleRoot :global(.visual-lab-pet-ear-left) {
+  left: 8px;
+}
+
+.moduleRoot :global(.visual-lab-pet-ear-right) {
+  right: 8px;
+}
+
+.moduleRoot :global(.visual-lab-pet-eye) {
+  position: absolute;
+  top: 11px;
+  width: 5px;
+  height: 7px;
+  border-radius: 2px;
+  background: #f8f4ff;
+  box-shadow: 0 0 9px rgba(248, 244, 255, 0.52);
+  animation: visualLabPetBlink 3.4s steps(1, end) infinite;
+}
+
+.moduleRoot :global(.visual-lab-pet-eye-left) {
+  left: 12px;
+}
+
+.moduleRoot :global(.visual-lab-pet-eye-right) {
+  right: 12px;
+}
+
+.moduleRoot :global(.visual-lab-pet-mouth) {
+  position: absolute;
+  left: 17px;
+  bottom: 8px;
+  width: 8px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(248, 244, 255, 0.66);
+}
+
+@keyframes visualLabPetFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.84; }
+  50% { transform: translateY(-5px); opacity: 1; }
+}
+
+@keyframes visualLabPetBlink {
+  0%, 88%, 100% { transform: scaleY(1); opacity: 1; }
+  90%, 94% { transform: scaleY(0.18); opacity: 0.55; }
+}
+
+@keyframes visualLabPlayingBars {
+  0%, 100% { height: 7px; opacity: 0.55; }
+  50% { height: 21px; opacity: 1; }
+}
+
+@keyframes visualLabVoiceBars {
+  0%, 100% {
+    transform: scaleY(0.72);
+    opacity: 0.48;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 0.92;
+  }
+}
+
+@keyframes visualLabAvatarSpeaking {
+  0% {
+    opacity: 0.72;
+    transform: scale(0.94);
+  }
+  55% {
+    opacity: 0.38;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.34);
+  }
+}
+
+.moduleRoot:has(:global(.visual-lab-theme-toggle:checked)) {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(118, 84, 218, 0.08), transparent 42%),
+    radial-gradient(circle at 100% 8%, rgba(117, 86, 255, 0.12), transparent 28%),
+    #fbfbfd;
+}
+
+.moduleRoot:has(:global(.visual-lab-theme-toggle:checked)) :global(.visual-lab-page) {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(118, 84, 218, 0.08), transparent 42%),
+    radial-gradient(circle at 100% 8%, rgba(117, 86, 255, 0.12), transparent 28%),
+    #fbfbfd;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface) {
+  border-color: rgba(20, 18, 28, 0.08);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.18) 0 0.58px, transparent 0.98px),
+    linear-gradient(180deg, #ffffff, #faf9fd 52%, #f6f4fb),
+    #ffffff;
+  background-size: 8px 8px, auto, auto;
+  color: #111018;
+  box-shadow:
+    0 24px 80px rgba(70, 60, 115, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::before) {
+  background:
+    radial-gradient(ellipse 72% 20% at 50% 0%, rgba(255, 255, 255, 0.42), transparent 72%),
+    radial-gradient(ellipse 62% 24% at 50% 100%, rgba(113, 89, 230, 0.08), transparent 74%);
+  box-shadow:
+    inset 0 0 28px rgba(111, 86, 220, 0.045),
+    inset 0 0 70px rgba(111, 86, 220, 0.035);
+  opacity: 0.48;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::after) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.18) 0 0.54px, transparent 0.98px),
+    linear-gradient(rgba(21, 18, 31, 0.024) 1px, transparent 1px);
+  background-size: 8px 8px, 100% 8px;
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock) {
+  border-top-color: rgba(17, 16, 24, 0.08);
+  border-bottom-color: rgba(17, 16, 24, 0.1);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.16) 0 0.55px, transparent 0.96px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(252, 251, 255, 0.88)),
+    #ffffff;
+  background-size: 8px 8px, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-dot-char i) {
+  background: transparent;
+  opacity: 0.01;
+  box-shadow: none;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-dot-char i.on) {
+  background: #101016;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-date) {
+  color: rgba(16, 16, 22, 0.62);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-onair) {
+  color: rgba(35, 198, 158, 0.9);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock .visual-lab-onair::before),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-status span) {
+  background: #66d9b8;
+  box-shadow: 0 0 8px rgba(102, 217, 184, 0.42);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player) {
+  border-color: rgba(17, 16, 24, 0.1);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.13) 0 0.52px, transparent 0.95px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 247, 252, 0.86)),
+    #ffffff;
+  background-size: 8px 8px, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -1px 0 rgba(17, 16, 24, 0.05);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-playing-bars span) {
+  background: #50d8bf;
+  box-shadow: 0 0 8px rgba(80, 216, 191, 0.38);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-track strong),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-name),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-status strong),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card-head strong) {
+  color: #121119;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-slot-chip) {
+  color: rgba(23, 142, 116, 0.74);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card-name) {
+  color: #121119;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-actions),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-track span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress-row),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-status),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-status em),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input span) {
+  color: rgba(17, 16, 24, 0.54);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-controls button),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input button) {
+  border-color: rgba(17, 16, 24, 0.13);
+  background: rgba(17, 16, 24, 0.05);
+  color: rgba(17, 16, 24, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.62);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input.has-text .visual-lab-send-button) {
+  border-color: rgba(17, 16, 24, 0.9);
+  background: #171620;
+  color: #ffffff;
+  box-shadow:
+    0 0 14px rgba(17, 16, 24, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input .visual-lab-mic-button.is-listening) {
+  border-color: rgba(35, 198, 158, 0.48);
+  background: rgba(35, 198, 158, 0.18);
+  color: rgba(15, 118, 98, 0.92);
+  box-shadow:
+    0 0 14px rgba(35, 198, 158, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.54);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input input) {
+  color: rgba(17, 16, 24, 0.82);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input input::placeholder) {
+  color: rgba(17, 16, 24, 0.38);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-webkit-slider-runnable-track) {
+  background: rgba(17, 16, 24, 0.16);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-progress span),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-webkit-slider-thumb) {
+  background: #171620;
+  box-shadow: 0 0 8px rgba(17, 16, 24, 0.16);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-moz-range-track) {
+  background: rgba(17, 16, 24, 0.16);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-volume-control input::-moz-range-thumb) {
+  background: #171620;
+  box-shadow: 0 0 8px rgba(17, 16, 24, 0.16);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-input),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-message p),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card) {
+  border-color: rgba(17, 16, 24, 0.08);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.12) 0 0.52px, transparent 0.95px),
+    rgba(255, 255, 255, 0.76);
+  background-size: 8px 8px, auto;
+  color: rgba(17, 16, 24, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-host-card) {
+  box-shadow:
+    0 22px 60px rgba(70, 60, 115, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.64);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-panel) {
+  border-color: rgba(17, 16, 24, 0.09);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.12) 0 0.62px, transparent 1px),
+    radial-gradient(circle at 64% 60%, rgba(60, 210, 180, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 246, 252, 0.98));
+  background-size: 8px 8px, auto, auto;
+  box-shadow:
+    0 34px 90px rgba(70, 60, 115, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.64);
+  color: #121119;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-panel > button),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-tags b) {
+  border-color: rgba(17, 16, 24, 0.12);
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(17, 16, 24, 0.62);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-copy),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-tags b) {
+  color: rgba(17, 16, 24, 0.68);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-stats) {
+  border-top-color: rgba(17, 16, 24, 0.1);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-profile-stats small) {
+  color: rgba(17, 16, 24, 0.38);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-switch) {
+  border-color: rgba(17, 16, 24, 0.1);
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-switch::before) {
+  background: #101016;
+}
+
+.moduleRoot :global(.visual-lab-surface) {
+  grid-template-rows: 54px 268px 88px 30px 1fr 70px 28px;
+}
+
+.moduleRoot :global(.visual-lab-host-status strong),
+.moduleRoot :global(.visual-lab-host-name) {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.moduleRoot :global(.visual-lab-message-host) {
+  margin: 12px 0 0 54px;
+}
+
+.moduleRoot :global(.visual-lab-message-host p) {
+  max-width: 360px;
+  padding: 17px 18px;
+  background: rgba(0, 0, 0, 0.46);
+  color: rgba(248, 244, 255, 0.9);
+  font-size: 13px;
+  border-top-left-radius: 4px;
+}
+
+.moduleRoot :global(.visual-lab-player) {
+  gap: 7px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.moduleRoot :global(.visual-lab-live-indicator) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(95, 232, 185, 0.92);
+}
+
+.moduleRoot :global(.visual-lab-live-indicator span) {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #62e6b8;
+  box-shadow: 0 0 10px rgba(98, 230, 184, 0.62);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-message-host p) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.1) 0 0.52px, transparent 0.95px),
+    rgba(255, 255, 255, 0.86);
+  color: rgba(17, 16, 24, 0.82);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-reply-voice-button) {
+  border-color: rgba(35, 198, 158, 0.42);
+  background: rgba(35, 198, 158, 0.12);
+  color: rgba(17, 16, 24, 0.72);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-reply-voice-button span) {
+  background: rgba(17, 16, 24, 0.9);
+  color: #ffffff;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-reply-voice-button:disabled span) {
+  background: rgba(17, 16, 24, 0.24);
+}
+
+.moduleRoot :global(.visual-lab-host-status) {
+  align-items: flex-start;
+  min-height: 42px;
+}
+
+.moduleRoot :global(.visual-lab-host-name) {
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.moduleRoot :global(.visual-lab-host-status em) {
+  margin-top: 2px;
+}
+
+.moduleRoot :global(.visual-lab-message-host) {
+  margin: -18px 0 0 54px;
+}
+
+.moduleRoot :global(.visual-lab-clock) {
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 0.55px, transparent 0.95px),
+    radial-gradient(ellipse 78% 18% at 50% 0%, rgba(248, 244, 255, 0.14), transparent 64%),
+    radial-gradient(ellipse 96% 34% at 50% 100%, rgba(160, 88, 255, 0.2), rgba(92, 52, 200, 0.08) 42%, transparent 76%),
+    radial-gradient(ellipse 18% 86% at 0% 50%, rgba(158, 88, 255, 0.12), transparent 76%),
+    radial-gradient(ellipse 18% 86% at 100% 50%, rgba(220, 150, 255, 0.1), transparent 76%),
+    linear-gradient(180deg, rgba(7, 10, 22, 0.91), rgba(1, 2, 7, 0.96) 54%, rgba(5, 4, 13, 0.94)),
+    #010207;
+  background-size: 6px 6px, auto, auto, auto, auto, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 30px rgba(169, 100, 255, 0.12),
+    inset 0 0 58px rgba(0, 0, 0, 0.66),
+    0 14px 28px rgba(0, 0, 0, 0.24);
+}
+
+.moduleRoot :global(.visual-lab-player) {
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 0.55px, transparent 0.95px),
+    radial-gradient(ellipse 78% 54% at 12% 50%, rgba(170, 98, 255, 0.16), transparent 68%),
+    radial-gradient(ellipse 78% 54% at 92% 50%, rgba(224, 168, 255, 0.12), transparent 68%),
+    linear-gradient(180deg, rgba(18, 17, 25, 0.86), rgba(8, 8, 13, 0.9));
+  background-size: 7px 7px, auto, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.045),
+    inset 0 0 34px rgba(154, 88, 255, 0.12);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::before) {
+  mix-blend-mode: multiply;
+  opacity: 0.38;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.16) 0 0.55px, transparent 0.96px),
+    radial-gradient(ellipse 78% 18% at 50% 0%, rgba(140, 112, 220, 0.13), transparent 66%),
+    radial-gradient(ellipse 96% 32% at 50% 100%, rgba(114, 88, 220, 0.13), transparent 78%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(252, 251, 255, 0.84)),
+    #ffffff;
+  background-size: 8px 8px, auto, auto, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.13) 0 0.52px, transparent 0.95px),
+    radial-gradient(ellipse 68% 58% at 10% 50%, rgba(110, 82, 220, 0.11), transparent 70%),
+    radial-gradient(ellipse 68% 58% at 94% 50%, rgba(92, 72, 190, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(248, 247, 252, 0.78)),
+    #ffffff;
+  background-size: 8px 8px, auto, auto, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(17, 16, 24, 0.05),
+    inset 0 0 34px rgba(111, 86, 220, 0.07);
+}
+
+.moduleRoot :global(.visual-lab-surface) {
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.11) 0 0.78px, transparent 1.18px),
+    linear-gradient(180deg, rgba(15, 14, 20, 0.98), rgba(5, 5, 8, 0.99) 48%, rgba(8, 8, 12, 0.99)),
+    #050509;
+  background-size: 18px 18px, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-surface::after) {
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.18) 0 0.72px, transparent 1.16px),
+    linear-gradient(rgba(248, 244, 255, 0.012) 1px, transparent 1px);
+  background-size: 18px 18px, 100% 18px;
+  opacity: 0.2;
+  animation: none;
+  transform: none;
+}
+
+.moduleRoot :global(.visual-lab-clock) {
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.09) 0 0.72px, transparent 1.16px),
+    radial-gradient(ellipse 70% 20% at 50% 0%, rgba(248, 244, 255, 0.08), transparent 68%),
+    linear-gradient(180deg, rgba(7, 10, 18, 0.94), rgba(1, 2, 6, 0.98) 54%, rgba(4, 4, 9, 0.96)),
+    #010207;
+  background-size: 18px 18px, auto, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-player) {
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.08) 0 0.68px, transparent 1.12px),
+    linear-gradient(180deg, rgba(18, 17, 22, 0.9), rgba(7, 7, 11, 0.94)),
+    #07070b;
+  background-size: 18px 18px, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 26px rgba(255, 255, 255, 0.025);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.14) 0 0.78px, transparent 1.18px),
+    linear-gradient(180deg, #ffffff, #fbfafe 52%, #f7f5fb),
+    #ffffff;
+  background-size: 18px 18px, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::after) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.15) 0 0.72px, transparent 1.16px),
+    linear-gradient(rgba(21, 18, 31, 0.014) 1px, transparent 1px);
+  background-size: 18px 18px, 100% 18px;
+  opacity: 0.18;
+  animation: none;
+  transform: none;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-clock) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.13) 0 0.72px, transparent 1.16px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(252, 251, 255, 0.86)),
+    #ffffff;
+  background-size: 18px 18px, auto, auto;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-player) {
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.12) 0 0.68px, transparent 1.12px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(249, 248, 252, 0.82)),
+    #ffffff;
+  background-size: 18px 18px, auto, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(17, 16, 24, 0.045);
+}
+
+.moduleRoot :global(.visual-lab-device::before) {
+  background:
+    radial-gradient(ellipse 54% 12% at 22% 0%, rgba(248, 244, 255, 0.2), transparent 68%),
+    radial-gradient(ellipse 42% 13% at 78% 100%, rgba(174, 92, 255, 0.42), transparent 72%),
+    radial-gradient(ellipse 11% 54% at 0% 66%, rgba(154, 88, 255, 0.34), transparent 74%),
+    radial-gradient(ellipse 10% 46% at 100% 28%, rgba(226, 164, 255, 0.28), transparent 74%);
+  animation: visualLabOuterWave 4.4s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-device::after) {
+  background:
+    radial-gradient(ellipse 62% 16% at 18% 0%, rgba(248, 244, 255, 0.16), transparent 68%),
+    radial-gradient(ellipse 72% 18% at 74% 100%, rgba(167, 88, 255, 0.3), transparent 72%),
+    radial-gradient(ellipse 15% 72% at 0% 34%, rgba(120, 70, 230, 0.22), transparent 74%),
+    radial-gradient(ellipse 14% 64% at 100% 72%, rgba(204, 132, 255, 0.22), transparent 76%);
+  animation: visualLabOuterWaveWide 5.2s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-surface::before) {
+  background:
+    radial-gradient(ellipse 48% 12% at 16% 0%, rgba(250, 245, 255, 0.2), rgba(168, 96, 255, 0.12) 40%, transparent 74%),
+    radial-gradient(ellipse 38% 10% at 72% 0%, rgba(178, 110, 255, 0.2), transparent 72%),
+    radial-gradient(ellipse 54% 17% at 38% 100%, rgba(203, 108, 255, 0.34), rgba(118, 64, 235, 0.16) 42%, transparent 76%),
+    radial-gradient(ellipse 36% 14% at 92% 100%, rgba(244, 204, 255, 0.18), transparent 72%),
+    radial-gradient(ellipse 10% 50% at 0% 22%, rgba(170, 94, 255, 0.28), rgba(120, 70, 230, 0.11) 46%, transparent 78%),
+    radial-gradient(ellipse 12% 62% at 0% 78%, rgba(230, 170, 255, 0.16), transparent 76%),
+    radial-gradient(ellipse 10% 54% at 100% 34%, rgba(222, 154, 255, 0.22), rgba(120, 70, 230, 0.1) 44%, transparent 78%),
+    radial-gradient(ellipse 12% 48% at 100% 88%, rgba(150, 88, 255, 0.22), transparent 76%);
+  filter: blur(2.6px);
+  opacity: 0.58;
+  transform-origin: center;
+  animation: visualLabInnerWave 4.2s ease-in-out infinite;
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface::before) {
+  background:
+    radial-gradient(ellipse 48% 12% at 16% 0%, rgba(255, 255, 255, 0.34), rgba(126, 96, 205, 0.1) 40%, transparent 74%),
+    radial-gradient(ellipse 38% 10% at 72% 0%, rgba(126, 96, 205, 0.11), transparent 72%),
+    radial-gradient(ellipse 54% 17% at 38% 100%, rgba(113, 89, 230, 0.14), rgba(91, 70, 160, 0.08) 42%, transparent 76%),
+    radial-gradient(ellipse 36% 14% at 92% 100%, rgba(255, 255, 255, 0.2), transparent 72%),
+    radial-gradient(ellipse 10% 50% at 0% 22%, rgba(126, 96, 205, 0.12), transparent 78%),
+    radial-gradient(ellipse 12% 62% at 0% 78%, rgba(126, 96, 205, 0.08), transparent 76%),
+    radial-gradient(ellipse 10% 54% at 100% 34%, rgba(126, 96, 205, 0.1), transparent 78%),
+    radial-gradient(ellipse 12% 48% at 100% 88%, rgba(113, 89, 230, 0.1), transparent 76%);
+  mix-blend-mode: multiply;
+  opacity: 0.34;
+}
+
+.moduleRoot {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(86, 50, 190, 0.09), transparent 44%),
+    #020108;
+}
+
+.moduleRoot :global(.visual-lab-page) {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(86, 50, 190, 0.08), transparent 42%),
+    #020108;
+}
+
+.moduleRoot :global(.visual-lab-device::before) {
+  inset: -20px;
+  border-radius: 44px;
+  background:
+    radial-gradient(ellipse 58% 13% at 22% 0%, rgba(248, 244, 255, 0.3), transparent 68%),
+    radial-gradient(ellipse 48% 14% at 78% 100%, rgba(188, 94, 255, 0.68), transparent 72%),
+    radial-gradient(ellipse 13% 58% at 0% 66%, rgba(166, 86, 255, 0.56), transparent 74%),
+    radial-gradient(ellipse 12% 50% at 100% 28%, rgba(232, 170, 255, 0.46), transparent 74%);
+  filter: blur(13px);
+  opacity: 0.82;
+  box-shadow:
+    0 0 30px rgba(184, 100, 255, 0.42),
+    0 0 64px rgba(124, 72, 235, 0.28);
+}
+
+.moduleRoot :global(.visual-lab-device::after) {
+  inset: -56px;
+  border-radius: 76px;
+  background:
+    radial-gradient(ellipse 64% 17% at 18% 0%, rgba(248, 244, 255, 0.26), transparent 68%),
+    radial-gradient(ellipse 78% 20% at 74% 100%, rgba(178, 88, 255, 0.5), transparent 72%),
+    radial-gradient(ellipse 17% 74% at 0% 34%, rgba(126, 68, 240, 0.4), transparent 74%),
+    radial-gradient(ellipse 16% 66% at 100% 72%, rgba(214, 138, 255, 0.38), transparent 76%);
+  filter: blur(34px);
+  opacity: 0.92;
+  box-shadow:
+    0 0 82px rgba(156, 82, 255, 0.36),
+    0 0 150px rgba(96, 58, 210, 0.22);
+}
+
+.moduleRoot:has(:global(.visual-lab-theme-toggle:checked)) {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(118, 84, 218, 0.08), transparent 44%),
+    #fbfbfd;
+}
+
+.moduleRoot:has(:global(.visual-lab-theme-toggle:checked)) :global(.visual-lab-page) {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(118, 84, 218, 0.08), transparent 44%),
+    #fbfbfd;
+}
+
+.moduleRoot :global(.visual-lab-clock::before) {
+  background: none;
+  opacity: 0;
+}
+
+.moduleRoot :global(.visual-lab-surface.is-on-air .visual-lab-clock .visual-lab-onair),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface.is-on-air .visual-lab-clock .visual-lab-onair) {
+  color: #50d8bf;
+  text-shadow:
+    0 0 8px rgba(80, 216, 191, 0.62),
+    0 0 18px rgba(80, 216, 191, 0.32);
+}
+
+.moduleRoot :global(.visual-lab-surface.is-on-air .visual-lab-clock .visual-lab-onair::before),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface.is-on-air .visual-lab-clock .visual-lab-onair::before) {
+  background: #50d8bf;
+  box-shadow:
+    0 0 9px rgba(80, 216, 191, 0.86),
+    0 0 18px rgba(80, 216, 191, 0.42);
+}
+
+.moduleRoot :global(.visual-lab-queue) {
+  appearance: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  text-align: left;
+}
+
+.moduleRoot :global(.visual-lab-queue:hover),
+.moduleRoot :global(.visual-lab-queue.is-open) {
+  color: rgba(248, 244, 255, 0.78);
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.moduleRoot :global(.visual-lab-schedule-panel) {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 528px;
+  z-index: 6;
+  overflow: hidden;
+  border: 1px solid rgba(248, 244, 255, 0.14);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.13) 0 0.62px, transparent 1px),
+    linear-gradient(180deg, rgba(12, 12, 17, 0.96), rgba(5, 5, 8, 0.94));
+  background-size: 18px 18px, auto;
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.52),
+    0 0 34px rgba(135, 88, 255, 0.18);
+}
+
+.moduleRoot :global(.visual-lab-library-panel) {
+  top: 92px;
+  max-height: 596px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.13) 0 0.62px, transparent 1px),
+    linear-gradient(180deg, rgba(12, 12, 17, 0.98), rgba(5, 5, 8, 0.96));
+  background-size: 8px 8px, auto;
+}
+
+.moduleRoot :global(.visual-lab-library-editor) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(248, 244, 255, 0.075);
+}
+
+.moduleRoot :global(.visual-lab-library-editor + .visual-lab-library-editor) {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.moduleRoot :global(.visual-lab-library-editor label) {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.moduleRoot :global(.visual-lab-library-editor label span) {
+  color: rgba(126, 255, 218, 0.62);
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.moduleRoot :global(.visual-lab-library-editor input) {
+  min-width: 0;
+  height: 31px;
+  padding: 0 10px;
+  border: 1px solid rgba(248, 244, 255, 0.1);
+  border-radius: 9px;
+  background:
+    radial-gradient(circle, rgba(248, 244, 255, 0.08) 0 0.55px, transparent 0.96px),
+    rgba(255, 255, 255, 0.045);
+  background-size: 7px 7px, auto;
+  color: rgba(248, 244, 255, 0.86);
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.moduleRoot :global(.visual-lab-library-editor input::placeholder) {
+  color: rgba(248, 244, 255, 0.34);
+}
+
+.moduleRoot :global(.visual-lab-library-editor input:focus) {
+  border-color: rgba(126, 255, 218, 0.34);
+  box-shadow: 0 0 14px rgba(80, 216, 191, 0.1);
+}
+
+.moduleRoot :global(.visual-lab-library-editor button) {
+  align-self: end;
+  min-width: 56px;
+  height: 31px;
+  padding: 0 12px;
+  border: 1px solid rgba(126, 255, 218, 0.22);
+  border-radius: 999px;
+  background: rgba(80, 216, 191, 0.08);
+  color: rgba(126, 255, 218, 0.78);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.moduleRoot :global(.visual-lab-library-editor button:hover:not(:disabled)) {
+  border-color: rgba(126, 255, 218, 0.44);
+  background: rgba(80, 216, 191, 0.14);
+  color: #f8f4ff;
+}
+
+.moduleRoot :global(.visual-lab-library-editor button:disabled) {
+  cursor: default;
+  opacity: 0.52;
+}
+
+.moduleRoot :global(.visual-lab-schedule-head) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid rgba(248, 244, 255, 0.09);
+  color: rgba(248, 244, 255, 0.62);
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.moduleRoot :global(.visual-lab-schedule-head button) {
+  margin-left: auto;
+  border: 1px solid rgba(126, 255, 218, 0.22);
+  border-radius: 999px;
+  background: rgba(80, 216, 191, 0.08);
+  color: rgba(126, 255, 218, 0.78);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  padding: 6px 9px;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.moduleRoot :global(.visual-lab-schedule-head button:hover) {
+  border-color: rgba(126, 255, 218, 0.44);
+  background: rgba(80, 216, 191, 0.14);
+  color: rgba(248, 244, 255, 0.92);
+}
+
+.moduleRoot :global(.visual-lab-schedule-head button:disabled) {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list) {
+  display: grid;
+  max-height: 286px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article) {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(248, 244, 255, 0.065);
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article:last-child) {
+  border-bottom: 0;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article > span) {
+  color: rgba(126, 255, 218, 0.62);
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article strong),
+.moduleRoot :global(.visual-lab-schedule-list article em),
+.moduleRoot :global(.visual-lab-schedule-list article small) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article strong) {
+  color: rgba(248, 244, 255, 0.88);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article em) {
+  margin-top: 4px;
+  color: rgba(248, 244, 255, 0.5);
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article small) {
+  margin-top: 6px;
+  color: rgba(248, 244, 255, 0.38);
+  font-size: 10px;
+}
+
+.moduleRoot :global(.visual-lab-schedule-list article.is-current) {
+  background: rgba(80, 216, 191, 0.08);
+  box-shadow: inset 3px 0 0 rgba(80, 216, 191, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot) {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding: 11px 14px;
+  border: 0;
+  border-bottom: 1px solid rgba(248, 244, 255, 0.065);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background 150ms ease, box-shadow 150ms ease;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot:last-child) {
+  border-bottom: 0;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot:hover) {
+  background: rgba(248, 244, 255, 0.055);
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot > span) {
+  color: rgba(126, 255, 218, 0.62);
+  font-family: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot strong),
+.moduleRoot :global(.visual-lab-schedule-slot em),
+.moduleRoot :global(.visual-lab-schedule-slot small) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot strong) {
+  color: rgba(248, 244, 255, 0.88);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot em) {
+  margin-top: 4px;
+  color: rgba(248, 244, 255, 0.5);
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot small) {
+  margin-top: 6px;
+  color: rgba(248, 244, 255, 0.38);
+  font-size: 10px;
+}
+
+.moduleRoot :global(.visual-lab-schedule-slot.is-current) {
+  background: rgba(80, 216, 191, 0.08);
+  box-shadow: inset 3px 0 0 rgba(80, 216, 191, 0.78);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue:hover),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-queue.is-open) {
+  color: rgba(17, 16, 24, 0.78);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-panel) {
+  border-color: rgba(17, 16, 24, 0.1);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.12) 0 0.62px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 247, 252, 0.92));
+  background-size: 18px 18px, auto;
+  box-shadow:
+    0 20px 48px rgba(70, 60, 115, 0.16),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.52);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-library-button) {
+  border-color: rgba(17, 16, 24, 0.13);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.12) 0 0.55px, transparent 0.96px),
+    rgba(17, 16, 24, 0.045);
+  color: rgba(17, 16, 24, 0.68);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-library-button:hover),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-library-button.is-open) {
+  border-color: rgba(35, 198, 158, 0.4);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.1) 0 0.55px, transparent 0.96px),
+    rgba(35, 198, 158, 0.12);
+  color: rgba(17, 16, 24, 0.88);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-library-editor) {
+  border-bottom-color: rgba(17, 16, 24, 0.08);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-library-editor label span) {
+  color: rgba(23, 142, 116, 0.72);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-library-editor input) {
+  border-color: rgba(17, 16, 24, 0.1);
+  background:
+    radial-gradient(circle, rgba(21, 18, 31, 0.1) 0 0.55px, transparent 0.96px),
+    rgba(255, 255, 255, 0.62);
+  color: rgba(17, 16, 24, 0.82);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-head),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-list article),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-slot) {
+  border-color: rgba(17, 16, 24, 0.08);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-head),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-list article em),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-list article small),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-slot em),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-slot small) {
+  color: rgba(17, 16, 24, 0.52);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-head button) {
+  border-color: rgba(17, 16, 24, 0.14);
+  background: rgba(17, 16, 24, 0.06);
+  color: rgba(17, 16, 24, 0.64);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-head button:hover) {
+  border-color: rgba(17, 16, 24, 0.28);
+  background: rgba(17, 16, 24, 0.1);
+  color: rgba(17, 16, 24, 0.86);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-list article strong),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-slot strong) {
+  color: rgba(17, 16, 24, 0.86);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-list article.is-current),
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-slot.is-current) {
+  background: rgba(80, 216, 191, 0.13);
+}
+
+.moduleRoot :global(.visual-lab-theme-toggle:checked ~ .visual-lab-surface .visual-lab-schedule-slot:hover) {
+  background: rgba(17, 16, 24, 0.055);
+}
+
+@keyframes visualLabPlayerGlowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.985);
+    box-shadow:
+      0 0 12px rgba(160, 90, 255, 0.38),
+      0 0 24px rgba(130, 80, 255, 0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.025);
+    box-shadow:
+      0 0 24px rgba(190, 112, 255, 0.82),
+      0 0 52px rgba(130, 80, 255, 0.5),
+      0 0 76px rgba(95, 55, 210, 0.34);
+  }
+}
+
+@keyframes visualLabInnerEdgePulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.992);
+    box-shadow:
+      inset 0 0 14px rgba(185, 116, 255, 0.2),
+      inset 0 0 34px rgba(116, 70, 240, 0.1),
+      0 0 12px rgba(154, 88, 255, 0.14);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.018);
+    box-shadow:
+      inset 0 0 26px rgba(220, 176, 255, 0.34),
+      inset 0 0 68px rgba(154, 88, 255, 0.24),
+      inset 0 0 104px rgba(92, 56, 210, 0.14),
+      0 0 26px rgba(170, 96, 255, 0.24),
+      0 0 58px rgba(110, 64, 230, 0.16);
+  }
+}
+
+@keyframes visualLabInnerWave {
+  0%, 100% {
+    opacity: 0.44;
+    transform: scale(0.992) translate3d(0, 0, 0);
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+    box-shadow:
+      inset 0 0 18px rgba(210, 152, 255, 0.22),
+      inset 0 0 48px rgba(136, 76, 250, 0.14),
+      0 0 12px rgba(150, 88, 255, 0.12);
+  }
+  18% {
+    opacity: 0.72;
+    transform: scale(1.01) translate3d(-2px, 1px, 0);
+    background-position:
+      -20px 2px,
+      18px -6px,
+      10px -8px,
+      -12px 4px,
+      0 -18px,
+      0 14px,
+      0 6px,
+      0 -10px;
+    box-shadow:
+      inset 0 0 26px rgba(230, 184, 255, 0.32),
+      inset 0 0 70px rgba(154, 88, 255, 0.22),
+      0 0 22px rgba(170, 96, 255, 0.2);
+  }
+  37% {
+    opacity: 0.56;
+    transform: scale(1.004) translate3d(2px, -1px, 0);
+    background-position:
+      16px -5px,
+      -16px 5px,
+      -20px 8px,
+      18px -6px,
+      0 12px,
+      0 -16px,
+      0 -18px,
+      0 12px;
+    box-shadow:
+      inset 0 0 22px rgba(210, 152, 255, 0.26),
+      inset 0 0 60px rgba(136, 76, 250, 0.18),
+      0 0 16px rgba(150, 88, 255, 0.16);
+  }
+  61% {
+    opacity: 0.86;
+    transform: scale(1.022) translate3d(0, 2px, 0);
+    background-position:
+      10px 6px,
+      -24px -2px,
+      22px -16px,
+      -18px 8px,
+      0 -8px,
+      0 22px,
+      0 18px,
+      0 -20px;
+    box-shadow:
+      inset 0 0 34px rgba(244, 208, 255, 0.36),
+      inset 0 0 86px rgba(154, 88, 255, 0.26),
+      0 0 30px rgba(176, 96, 255, 0.24),
+      0 0 64px rgba(110, 64, 230, 0.15);
+  }
+  82% {
+    opacity: 0.5;
+    transform: scale(1.002) translate3d(-1px, -1px, 0);
+    background-position:
+      -10px -4px,
+      22px 4px,
+      -8px 10px,
+      12px -8px,
+      0 18px,
+      0 -6px,
+      0 -10px,
+      0 18px;
+    box-shadow:
+      inset 0 0 20px rgba(210, 152, 255, 0.24),
+      inset 0 0 52px rgba(136, 76, 250, 0.16),
+      0 0 14px rgba(150, 88, 255, 0.14);
+  }
+}
+
+@keyframes visualLabOuterWave {
+  0%, 100% {
+    opacity: 0.42;
+    transform: scale(0.992) translate3d(0, 0, 0);
+    filter: blur(12px);
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  22% {
+    opacity: 0.68;
+    transform: scale(1.012) translate3d(-4px, 2px, 0);
+    filter: blur(16px);
+    background-position:
+      -18px -2px,
+      14px 4px,
+      0 16px,
+      0 -8px;
+  }
+  49% {
+    opacity: 0.52;
+    transform: scale(1.004) translate3d(3px, -1px, 0);
+    filter: blur(14px);
+    background-position:
+      12px 5px,
+      -16px -5px,
+      0 -10px,
+      0 14px;
+  }
+  68% {
+    opacity: 0.78;
+    transform: scale(1.026) translate3d(2px, 3px, 0);
+    filter: blur(20px);
+    background-position:
+      20px -4px,
+      -10px 8px,
+      0 8px,
+      0 -18px;
+  }
+  86% {
+    opacity: 0.48;
+    transform: scale(1.006) translate3d(-2px, -2px, 0);
+    filter: blur(15px);
+    background-position:
+      -8px 3px,
+      18px -4px,
+      0 -14px,
+      0 8px;
+  }
+}
+
+@keyframes visualLabOuterWaveWide {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.988) translate3d(0, 0, 0);
+    filter: blur(22px);
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  16% {
+    opacity: 0.66;
+    transform: scale(1.014) translate3d(4px, -2px, 0);
+    filter: blur(28px);
+    background-position:
+      22px -4px,
+      -12px 6px,
+      0 -18px,
+      0 12px;
+  }
+  41% {
+    opacity: 0.58;
+    transform: scale(1.006) translate3d(-3px, 2px, 0);
+    filter: blur(25px);
+    background-position:
+      -16px 6px,
+      18px -6px,
+      0 12px,
+      0 -14px;
+  }
+  63% {
+    opacity: 0.78;
+    transform: scale(1.03) translate3d(-2px, 4px, 0);
+    filter: blur(34px);
+    background-position:
+      12px -10px,
+      -22px 10px,
+      0 -8px,
+      0 22px;
+  }
+  79% {
+    opacity: 0.54;
+    transform: scale(1.01) translate3d(3px, -2px, 0);
+    filter: blur(26px);
+    background-position:
+      -10px 4px,
+      16px -8px,
+      0 18px,
+      0 -10px;
+  }
+}
+
+@keyframes visualLabBlinkColon {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+
+.moduleRoot :global(.visual-lab-dot-clock) {
+  gap: 8px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char) {
+  grid-template-columns: repeat(5, 9px);
+  grid-template-rows: repeat(7, 9px);
+  gap: 5px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon) {
+  grid-template-columns: 7px;
+  margin: 0 1px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char i) {
+  width: 6px;
+  height: 6px;
+  border-radius: 1.5px;
+}
+
+.moduleRoot :global(.visual-lab-dot-char.colon i) {
+  width: 5px;
+  height: 5px;
+}
+
+@keyframes visualLabGlowBreathe {
+  0%, 100% { opacity: 0.66; transform: scale(0.992); filter: blur(12px); }
+  50% { opacity: 0.88; transform: scale(1.01); filter: blur(15px); }
+}
+
+@keyframes visualLabGlowBreatheWide {
+  0%, 100% { opacity: 0.68; transform: scale(0.988); filter: blur(24px); }
+  50% { opacity: 0.9; transform: scale(1.018); filter: blur(30px); }
+}
+
+@keyframes visualLabInnerBreathe {
+  0%, 100% { opacity: 0.58; transform: scale(0.985); filter: blur(16px); }
+  50% { opacity: 0.84; transform: scale(1.025); filter: blur(20px); }
+}
+
+@keyframes visualLabInnerDrift {
+  0%, 100% { opacity: 0.44; transform: translate3d(0, 0, 0) scale(1); }
+  50% { opacity: 0.68; transform: translate3d(0, -10px, 0) scale(1.018); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moduleRoot :global(.visual-lab-device::before),
+  .moduleRoot :global(.visual-lab-device::after),
+  .moduleRoot :global(.visual-lab-surface::before),
+  .moduleRoot :global(.visual-lab-surface::after),
+  .moduleRoot :global(.visual-lab-player::before),
+  .moduleRoot :global(.visual-lab-pet),
+  .moduleRoot :global(.visual-lab-pet-eye),
+  .moduleRoot :global(.visual-lab-playing-bars span),
+  .moduleRoot :global(.visual-lab-voice-wave span) {
+    animation: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .moduleRoot :global(.visual-lab-page) {
+    min-height: 100svh;
+    padding: 10px 0;
+  }
+
+  .moduleRoot :global(.visual-lab-device) {
+    width: min(calc(100vw - 20px), 520px);
+  }
+
+  .moduleRoot :global(.visual-lab-surface) {
+    height: min(960px, calc(100svh - 20px));
+    min-height: 900px;
+    grid-template-rows: 54px 280px 142px 40px 1fr 70px 28px;
+    border-radius: 22px;
+  }
+
+  .moduleRoot :global(.visual-lab-dot-clock) {
+    gap: 5px;
+  }
+
+  .moduleRoot :global(.visual-lab-dot-char) {
+    grid-template-columns: repeat(5, 6px);
+    grid-template-rows: repeat(7, 6px);
+    gap: 3px;
+  }
+
+  .moduleRoot :global(.visual-lab-dot-char i) {
+    width: 4px;
+    height: 4px;
+  }
+
+  .moduleRoot :global(.visual-lab-clock) {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "local-ai-radio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local mock AI radio project with a Next.js web player and Fastify API.",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:api": "npm run dev --workspace @local-ai-radio/api",
+    "dev:web": "npm run dev --workspace @local-ai-radio/web",
+    "build": "npm run build --workspace @local-ai-radio/web",
+    "start:api": "npm run start --workspace @local-ai-radio/api"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14"
+  }
+}

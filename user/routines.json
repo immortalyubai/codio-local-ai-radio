@@ -1,0 +1,71 @@
+{
+  "note": "Immortal's daily routine for Codio. Codio uses these blocks to plan the daily radio schedule.",
+  "blocks": [
+    {
+      "slotId": "morning-wake",
+      "label": "早上苏醒",
+      "timeRange": "08:00-09:00",
+      "activity": "起床 / 洗漱 / 打开电脑",
+      "intent": "先把人和房间慢慢叫醒，不急着进入高压状态。",
+      "musicIntent": "希望音乐轻一点、温暖一点，像一天刚打开时的第一束光。",
+      "scoringTags": ["warm-vocal", "piano", "mandarin-pop", "light-electronic"],
+      "displayStyles": ["温暖人声", "钢琴", "轻一点"],
+      "energy": "low-to-medium"
+    },
+    {
+      "slotId": "deep-work",
+      "label": "上午专注",
+      "timeRange": "09:00-12:00",
+      "activity": "和 Codex 写代码",
+      "intent": "把注意力稳定下来，让上午进入持续创作和编码状态。",
+      "musicIntent": "希望音乐专注、少人声、稳定，像一条不打扰思路的工作轨道。",
+      "scoringTags": ["steady-groove", "instrumental", "light-electronic", "ambient"],
+      "displayStyles": ["专注", "少人声", "稳定"],
+      "energy": "medium"
+    },
+    {
+      "slotId": "noon-breath",
+      "label": "午间休息",
+      "timeRange": "12:00-13:30",
+      "activity": "吃饭休息",
+      "intent": "从上午的工作里抽离出来，给身体和情绪一次短暂重置。",
+      "musicIntent": "希望音乐放松、舒服，不推着人走，只让中午变得松一点。",
+      "scoringTags": ["relax", "chill", "acoustic", "mandarin-pop"],
+      "displayStyles": ["放松", "舒服", "轻流行"],
+      "energy": "low"
+    },
+    {
+      "slotId": "afternoon-drive",
+      "label": "下午推进",
+      "timeRange": "13:30-18:00",
+      "activity": "继续做项目",
+      "intent": "下午需要继续推进项目，但保持节奏，不把人推得太紧。",
+      "musicIntent": "希望音乐有推进感，有一点节奏和城市感，帮助把事情继续往前做。",
+      "scoringTags": ["rhythm-pop", "city", "steady-groove", "light-electronic"],
+      "displayStyles": ["推进感", "节奏", "城市感"],
+      "energy": "medium"
+    },
+    {
+      "slotId": "evening-soften",
+      "label": "晚上整理",
+      "timeRange": "18:00-21:00",
+      "activity": "放松和整理素材",
+      "intent": "把一天的输出慢慢收回来，进入整理、回看和放松的状态。",
+      "musicIntent": "希望音乐温暖、有陪伴感，像房间里还亮着的一盏灯。",
+      "scoringTags": ["warm-vocal", "chill", "mandarin-pop", "neo-classical"],
+      "displayStyles": ["温暖", "陪伴感", "慢一点"],
+      "energy": "low-to-medium"
+    },
+    {
+      "slotId": "night-close",
+      "label": "睡前降噪",
+      "timeRange": "21:00-00:00",
+      "activity": "准备睡觉",
+      "intent": "让一天慢慢结束，把心里的声音放轻一点。",
+      "musicIntent": "希望音乐安静、低能量，适合睡前收心和放松。",
+      "scoringTags": ["late-night", "ambient", "piano", "warm-vocal"],
+      "displayStyles": ["安静", "低能量", "睡前"],
+      "energy": "low"
+    }
+  ]
+}

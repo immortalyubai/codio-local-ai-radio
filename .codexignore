@@ -1,0 +1,14 @@
+.git/
+node_modules/
+.next/
+apps/web/.next/
+dist/
+build/
+audio/generated/
+data/*.sqlite
+data/*.sqlite-*
+driver-backup/
+*.log
+web.out.log
+.env
+.env.*
